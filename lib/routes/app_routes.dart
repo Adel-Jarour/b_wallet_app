@@ -3,6 +3,8 @@ class Routes {
   static const forgetPassMethod = "/forget_pass_method";
   static const otp = "/otp";
   static const email = "/email";
+  static const resetPass = "/reset_pas";
+  static const home = "/home";
 
   static const bottomNav = "/bottom_nav";
   static const calender = "/calender";
@@ -19,5 +21,4 @@ class Routes {
   static const scanQR = "/scan_qr";
   static const login = "/login";
   static const signUp = "/sign_up";
-  static const resetPass = "/reset_pas";
 }

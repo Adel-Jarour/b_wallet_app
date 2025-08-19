@@ -11,11 +11,13 @@ class Strings {
   static const String notifyWrong = 'Wrong';
   static const String notifyChooseForgetMethod =
       'Pleas choose a method to reset password';
+  static const String notifyOtpWrong = 'The OTP code is invalid.';
 
   static const String buttonSignIn = 'Sign In';
   static const String buttonForgetPass = 'Forget Password?';
   static const String buttonSignUp = 'Sign Up';
   static const String buttonConfirm = 'Confirm';
+  static const String buttonContinue = 'Continue';
 
   static const String splashBottomMsg = 'Your best choice for e-wallet';
 

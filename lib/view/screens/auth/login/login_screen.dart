@@ -45,9 +45,16 @@ class LoginScreen extends StatelessWidget {
             SizedBox(height: 24.h),
             const CustomLoginFormField(),
             SizedBox(height: 20.h),
-            CustomButton(
-              txt: Strings.buttonSignIn,
-              onTap: () {},
+            GetBuilder<AuthController>(
+              id: 'login_submit',
+              builder: (_) => CustomButton(
+                txt: Strings.buttonSignIn,
+                makeAnimation: true,
+                isLoading: controller.loginSubmittedAnimation,
+                onTap: () {
+                  controller.loginSubmit();
+                },
+              ),
             ),
             SizedBox(height: 15.h),
             TextButton(

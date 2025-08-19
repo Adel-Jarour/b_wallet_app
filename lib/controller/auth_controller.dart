@@ -1,3 +1,4 @@
+import 'package:b_wallet/routes/app_routes.dart';
 import 'package:get/get.dart';
 
 class AuthController extends GetxController {
@@ -12,6 +13,21 @@ class AuthController extends GetxController {
   void switchToLogin() {
     currentSheet = AuthSheetType.login;
     update();
+  }
+
+  bool loginSubmittedAnimation = false;
+
+  void loginSubmit() async {
+    loginSubmittedAnimation = true;
+    update(['login_submit']);
+    await Future.delayed(
+      const Duration(seconds: 2),
+      () {
+        loginSubmittedAnimation = false;
+        update(['login_submit']);
+        Get.toNamed(Routes.home);
+      },
+    );
   }
 
   @override
