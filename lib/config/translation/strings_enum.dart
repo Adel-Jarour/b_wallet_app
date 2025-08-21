@@ -7,6 +7,8 @@ class Strings {
   static const String textFieldPhoneNum = 'PhoneNumber';
   static const String textFieldEmailAddress = 'Email Address';
   static const String textFieldBirthday = 'Birthday';
+  static const String textFieldNewPassword = 'New Password';
+  static const String textFieldConfirmNewPassword = 'Confirm New Password';
 
   static const String notifyWrong = 'Wrong';
   static const String notifyChooseForgetMethod =
@@ -18,6 +20,8 @@ class Strings {
   static const String buttonSignUp = 'Sign Up';
   static const String buttonConfirm = 'Confirm';
   static const String buttonContinue = 'Continue';
+  static const String buttonSavePass = 'Save Password';
+  static const String buttonOk = 'OK';
 
   static const String splashBottomMsg = 'Your best choice for e-wallet';
 
@@ -40,4 +44,9 @@ class Strings {
 
   static const String otpTitle = 'Enter the OTP Code';
   static const String otpDesc = 'We’ve sent you an OTP code to';
+
+  static const String resetPass = 'Reset Password';
+  static const String resetPassMsg = 'Create your new password';
+  static const String resetPassSuccessDialogMsg =
+      'Yay! Your new password has been saved.';
 }

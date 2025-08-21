@@ -23,6 +23,24 @@ class OtpScreen extends StatelessWidget {
         backgroundColor: ColorConst.primaryColor,
         leading: const CustomArrowBack(),
       ),
+      bottomNavigationBar: GetBuilder<ForgetPassController>(
+        id: 'otp',
+        builder: (controller) => controller.showContinueButton
+            ? Padding(
+                padding: EdgeInsetsDirectional.only(
+                  start: 24.w,
+                  end: 24.w,
+                  bottom: 50.h,
+                ),
+                child: CustomButton(
+                  txt: Strings.buttonContinue,
+                  onTap: () {
+                    Get.toNamed(Routes.resetPass);
+                  },
+                ),
+              )
+            : const SizedBox(),
+      ),
       body: Stack(
         children: [
           Align(
@@ -84,18 +102,7 @@ class OtpScreen extends StatelessWidget {
                       ? CircularProgressIndicator(
                           color: ColorConst.whiteColor,
                         )
-                      : controller.showContinueButton
-                          ? Padding(
-                              padding: EdgeInsetsDirectional.symmetric(
-                                  horizontal: 70.w),
-                              child: CustomButton(
-                                txt: Strings.buttonContinue,
-                                onTap: () {
-                                  Get.toNamed(Routes.resetPass);
-                                },
-                              ),
-                            )
-                          : const SizedBox(),
+                      : const SizedBox(),
                 ),
               ],
             ),

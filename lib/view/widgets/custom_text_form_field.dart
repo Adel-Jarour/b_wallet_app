@@ -7,6 +7,7 @@ class CustomTextFormField extends StatelessWidget {
   final String? title;
   final String? hintTxt;
   final String? label;
+  final String? errorTxt;
   final FocusNode? focusNode;
   final String? prefix;
   final String? initialValue;
@@ -16,6 +17,7 @@ class CustomTextFormField extends StatelessWidget {
   final Function? validator;
   final Function? onEditingComplete;
   final Function? onTap;
+  final Function(String)? onChanged;
   final TextInputType? keyboardType;
   final TextEditingController? controller;
   final Color? fillColor;
@@ -67,6 +69,8 @@ class CustomTextFormField extends StatelessWidget {
     this.validator,
     this.onTap,
     this.readOnly = false,
+    this.onChanged,
+    this.errorTxt,
   });
 
   @override
@@ -85,6 +89,7 @@ class CustomTextFormField extends StatelessWidget {
       onFieldSubmitted: (value) {
         FocusManager.instance.primaryFocus?.unfocus();
       },
+      onChanged: (onChanged != null) ? (String value) => onChanged : null,
       minLines: minLines,
       maxLines: maxLines,
       readOnly: readOnly,
@@ -115,6 +120,7 @@ class CustomTextFormField extends StatelessWidget {
           color: ColorConst.redColor,
           fontSize: 11.sp,
         ),
+        errorText: errorTxt,
         fillColor: Colors.transparent,
         filled: true,
         focusedBorder: OutlineInputBorder(

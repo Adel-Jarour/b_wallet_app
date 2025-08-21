@@ -15,8 +15,10 @@ class CustomAuthBottomSheet extends StatelessWidget {
       alignment: Alignment.bottomCenter,
       child: DraggableScrollableSheet(
         expand: false,
-        initialChildSize: 0.55,
-        minChildSize: 0.55,
+        initialChildSize:
+            controller.currentSheet == AuthSheetType.login ? 0.55 : 0.7,
+        minChildSize:
+            controller.currentSheet == AuthSheetType.login ? 0.55 : 0.7,
         maxChildSize: 0.9,
         builder: (context, scrollController) {
           return Container(

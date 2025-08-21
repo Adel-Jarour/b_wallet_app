@@ -8,6 +8,7 @@ class ColorConst {
   static Color oceanBlueColor = const Color(0xff00D1FF);
   static Color blue2Color = const Color(0xff357AFF);
   static Color lightBlueColor = const Color(0xffAECAFF);
+  static Color lightBlue2Color = const Color(0xffE9F0FF);
   static Color redColor = const Color(0xffFF4444);
   static Color softRedColor = const Color(0xffFF6854);
   static Color purpleColor = const Color(0xff8674F5);

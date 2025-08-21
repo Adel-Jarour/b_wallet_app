@@ -5,6 +5,13 @@ class AuthController extends GetxController {
   bool showBottomSheet = false;
   var currentSheet = AuthSheetType.login;
 
+  bool showPass = true;
+
+  void updateShowPass() {
+    showPass = !showPass;
+    update();
+  }
+
   void switchToSignUp() {
     currentSheet = AuthSheetType.signup;
     update();

@@ -7,13 +7,14 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class SplashScreen extends StatelessWidget {
-  const SplashScreen({super.key});
+  SplashScreen({super.key});
+
+  final AuthController controller = Get.put(AuthController(), permanent: true);
 
   @override
   Widget build(BuildContext context) {
     return GetBuilder<AuthController>(
-      init: AuthController(),
-      builder: (controller) {
+      builder: (_) {
         return Scaffold(
           backgroundColor: ColorConst.primaryColor,
           body: Stack(
