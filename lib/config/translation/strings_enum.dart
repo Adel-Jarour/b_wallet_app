@@ -22,6 +22,7 @@ class Strings {
   static const String buttonContinue = 'Continue';
   static const String buttonSavePass = 'Save Password';
   static const String buttonOk = 'OK';
+  static const String buttonResetPassword = 'Reset Password';
 
   static const String splashBottomMsg = 'Your best choice for e-wallet';
 
@@ -49,4 +50,10 @@ class Strings {
   static const String resetPassMsg = 'Create your new password';
   static const String resetPassSuccessDialogMsg =
       'Yay! Your new password has been saved.';
+
+  static const String emailTitle = 'Enter Your Email Address';
+  static const String emailMsg =
+      'We’ll send you a link to reset your password.';
+  static const String emailSuccessDialogMsg =
+      'We’ve sent you a link to reset your password. Check your email!';
 }
