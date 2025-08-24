@@ -1,8 +1,7 @@
 import 'package:b_wallet/config/translation/strings_enum.dart';
 import 'package:b_wallet/const/color_const.dart';
-import 'package:b_wallet/const/image_const.dart';
 import 'package:b_wallet/controller/forget_pass_controller.dart';
-import 'package:b_wallet/view/screens/auth/forget_pass/forget_pass_method/widget/custom_forget_pass_method.dart';
+import 'package:b_wallet/view/screens/auth/forget_pass/forget_pass_method/widget/custom_forget_pass_method_form_field.dart';
 import 'package:b_wallet/view/widgets/custom_arrow_back.dart';
 import 'package:b_wallet/view/widgets/custom_button.dart';
 import 'package:b_wallet/view/widgets/custom_text.dart';
@@ -46,36 +45,7 @@ class ForgetPassMethodScreen extends StatelessWidget {
             SizedBox(
               height: 25.h,
             ),
-            GetBuilder<ForgetPassController>(
-              id: 'method',
-              builder: (_) => Column(
-                children: [
-                  CustomForgetPassMethod(
-                    onTap: () {
-                      controller.chooseForgetPassMethod(ForgetPassMethod.sms);
-                    },
-                    icon: ImageConst.smsIcon,
-                    title: Strings.forgetPassSms,
-                    desc: Strings.forgetPassSmsDisc,
-                    chooseMethod:
-                        controller.forgetPassMethod == ForgetPassMethod.sms,
-                  ),
-                  SizedBox(
-                    height: 20.h,
-                  ),
-                  CustomForgetPassMethod(
-                    onTap: () {
-                      controller.chooseForgetPassMethod(ForgetPassMethod.email);
-                    },
-                    icon: ImageConst.emailIcon,
-                    title: Strings.forgetPassEmail,
-                    desc: Strings.forgetPassEmailDesc,
-                    chooseMethod:
-                        controller.forgetPassMethod == ForgetPassMethod.email,
-                  ),
-                ],
-              ),
-            ),
+            const CustomForgetPassMethodFormField(),
             SizedBox(
               height: 40.h,
             ),

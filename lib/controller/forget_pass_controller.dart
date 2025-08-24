@@ -1,6 +1,7 @@
 import 'package:b_wallet/config/translation/strings_enum.dart';
 import 'package:b_wallet/const/color_const.dart';
 import 'package:b_wallet/routes/app_routes.dart';
+import 'package:b_wallet/utils/app_snack_bar.dart';
 import 'package:b_wallet/view/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -51,26 +52,7 @@ class ForgetPassController extends GetxController {
         checkOtp = false;
         update(['otp']);
         if (otp != '3333') {
-          Get.rawSnackbar(
-            animationDuration: const Duration(milliseconds: 300),
-            duration: const Duration(milliseconds: 2000),
-            backgroundColor: ColorConst.redColor,
-            snackPosition: SnackPosition.BOTTOM,
-            icon: Icon(
-              Icons.error_outlined,
-              color: ColorConst.whiteColor,
-              size: 24.r,
-            ),
-            messageText: CustomText(
-              txt: Strings.notifyOtpWrong,
-              fontSize: 16.sp,
-              color: ColorConst.whiteColor,
-            ),
-            margin: EdgeInsets.symmetric(horizontal: 24.w),
-            padding: EdgeInsets.symmetric(vertical: 20.h),
-            borderRadius: 8,
-            barBlur: 0,
-          );
+          AppSnackBar.showErrorRawSnackBar(message: Strings.notifyOtpWrong);
         } else {
           showContinueButton = true;
           update(['otp']);

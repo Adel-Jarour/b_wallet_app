@@ -5,9 +5,9 @@ class Routes {
   static const email = "/email";
   static const resetPass = "/reset_pas";
   static const home = "/home";
+  static const pin = "/pin";
+  static const confirmPin = "/confirm_pin";
 
-  static const bottomNav = "/bottom_nav";
-  static const calender = "/calender";
   static const lastAddition = "/last_addition";
   static const addAccount = "/add_account";
   static const currency = "/currency";

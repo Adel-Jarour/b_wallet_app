@@ -3,6 +3,8 @@ import 'package:b_wallet/view/screens/auth/forget_pass/email/email_screen.dart';
 import 'package:b_wallet/view/screens/auth/forget_pass/forget_pass_method/forget_pass_method_screen.dart';
 import 'package:b_wallet/view/screens/auth/forget_pass/otp/otp_screen.dart';
 import 'package:b_wallet/view/screens/auth/forget_pass/reset_password/reset_pass_screen.dart';
+import 'package:b_wallet/view/screens/auth/sign_up/pin/confirm_pin_screen.dart';
+import 'package:b_wallet/view/screens/auth/sign_up/pin/pin_screen.dart';
 import 'package:b_wallet/view/screens/home/home_screen.dart';
 import 'package:b_wallet/view/screens/splash/splash_screen.dart';
 import 'package:get/get.dart';
@@ -41,6 +43,16 @@ class AppPages {
     GetPage(
       name: Routes.resetPass,
       page: () => ResetPassScreen(),
+      transition: Transition.leftToRightWithFade,
+    ),
+    GetPage(
+      name: Routes.pin,
+      page: () => PinScreen(),
+      transition: Transition.leftToRightWithFade,
+    ),
+    GetPage(
+      name: Routes.confirmPin,
+      page: () => ConfirmPinScreen(),
       transition: Transition.leftToRightWithFade,
     ),
   ];

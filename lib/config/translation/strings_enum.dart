@@ -14,6 +14,7 @@ class Strings {
   static const String notifyChooseForgetMethod =
       'Pleas choose a method to reset password';
   static const String notifyOtpWrong = 'The OTP code is invalid.';
+  static const String notifyPinWrong = 'The pin you entered is wrong';
 
   static const String buttonSignIn = 'Sign In';
   static const String buttonForgetPass = 'Forget Password?';
@@ -56,4 +57,10 @@ class Strings {
       'We’ll send you a link to reset your password.';
   static const String emailSuccessDialogMsg =
       'We’ve sent you a link to reset your password. Check your email!';
+
+  static const String pinTitle = 'Set Up Your PIN';
+  static const String pinMsg =
+      'Security code is used to verify your every transaction to be more secure';
+
+  static const String confirmPinTitle = 'Confirm Your PIN';
 }

@@ -1,5 +1,6 @@
 import 'package:b_wallet/config/translation/strings_enum.dart';
 import 'package:b_wallet/controller/auth_controller.dart';
+import 'package:b_wallet/routes/app_routes.dart';
 import 'package:b_wallet/view/screens/auth/sign_up/widget/custom_sign_up_form_field.dart';
 import 'package:b_wallet/view/screens/auth/widget/custom_auth_question.dart';
 import 'package:b_wallet/view/screens/auth/widget/custom_drag_handle.dart';
@@ -45,7 +46,9 @@ class SignUpScreen extends StatelessWidget {
             SizedBox(height: 20.h),
             CustomButton(
               txt: Strings.buttonSignUp,
-              onTap: () {},
+              onTap: () {
+                Get.toNamed(Routes.pin);
+              },
             ),
             SizedBox(height: 25.h),
             CustomAuthQuestion(

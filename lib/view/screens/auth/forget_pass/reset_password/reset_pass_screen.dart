@@ -1,13 +1,11 @@
 import 'package:b_wallet/config/translation/strings_enum.dart';
 import 'package:b_wallet/const/color_const.dart';
-import 'package:b_wallet/const/image_const.dart';
 import 'package:b_wallet/controller/reset_pass_controller.dart';
+import 'package:b_wallet/view/screens/auth/forget_pass/reset_password/widget/custom_reset_pass_header.dart';
+import 'package:b_wallet/view/screens/auth/forget_pass/reset_password/widget/custom_reset_pass_text_form_field.dart';
 import 'package:b_wallet/view/widgets/custom_button.dart';
-import 'package:b_wallet/view/widgets/custom_text.dart';
-import 'package:b_wallet/view/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
 class ResetPassScreen extends StatelessWidget {
@@ -46,74 +44,11 @@ class ResetPassScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Container(
-                      width: 80.r,
-                      height: 80.r,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: ColorConst.lightBlue2Color,
-                      ),
-                      alignment: Alignment.center,
-                      child: SvgPicture.asset(ImageConst.emailIcon),
-                    ),
-                    SizedBox(
-                      height: 40.h,
-                    ),
-                    CustomText(
-                      txt: Strings.resetPass,
-                      fontSize: 20.sp,
-                      fontWeight: FontWeight.w500,
-                    ),
-                    SizedBox(
-                      height: 9.h,
-                    ),
-                    CustomText(
-                      txt: Strings.resetPassMsg,
-                      fontSize: 14.sp,
-                      color: ColorConst.blackColor.withValues(alpha: 0.7),
-                    ),
+                    const CustomResetPassHeader(),
                     SizedBox(
                       height: 24.h,
                     ),
-                    CustomTextFormField(
-                      label: Strings.textFieldNewPassword,
-                      controller: controller.newPassController,
-                      errorTxt: controller.confirmError,
-                      suffixIcon: GestureDetector(
-                        onTap: () {
-                          controller.updateShowNewPass();
-                        },
-                        child: Icon(
-                          controller.showNewPass
-                              ? Icons.visibility
-                              : Icons.visibility_off,
-                          size: 25.sp,
-                          color: ColorConst.grey2Color,
-                        ),
-                      ),
-                      obscureText: controller.showNewPass,
-                    ),
-                    SizedBox(
-                      height: 16.h,
-                    ),
-                    CustomTextFormField(
-                      label: Strings.textFieldConfirmNewPassword,
-                      controller: controller.confirmPassController,
-                      errorTxt: controller.confirmError,
-                      suffixIcon: GestureDetector(
-                        onTap: () {
-                          controller.updateShowConfirmPass();
-                        },
-                        child: Icon(
-                          controller.showConfirmPass
-                              ? Icons.visibility
-                              : Icons.visibility_off,
-                          size: 25.sp,
-                          color: ColorConst.grey2Color,
-                        ),
-                      ),
-                      obscureText: controller.showConfirmPass,
-                    ),
+                    const CustomResetPassTextFormField(),
                   ],
                 ),
               ),
