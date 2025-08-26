@@ -5,7 +5,7 @@ import 'package:b_wallet/view/screens/auth/forget_pass/otp/otp_screen.dart';
 import 'package:b_wallet/view/screens/auth/forget_pass/reset_password/reset_pass_screen.dart';
 import 'package:b_wallet/view/screens/auth/sign_up/pin/confirm_pin_screen.dart';
 import 'package:b_wallet/view/screens/auth/sign_up/pin/pin_screen.dart';
-import 'package:b_wallet/view/screens/home/home_screen.dart';
+import 'package:b_wallet/view/screens/bottomNav/bottom_nav_screen.dart';
 import 'package:b_wallet/view/screens/splash/splash_screen.dart';
 import 'package:get/get.dart';
 
@@ -37,7 +37,7 @@ class AppPages {
     ),
     GetPage(
       name: Routes.home,
-      page: () => HomeScreen(),
+      page: () => BottomNavScreen(),
       transition: Transition.leftToRightWithFade,
     ),
     GetPage(

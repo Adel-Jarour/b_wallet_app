@@ -7,10 +7,10 @@ class Routes {
   static const home = "/home";
   static const pin = "/pin";
   static const confirmPin = "/confirm_pin";
+  static const topUp = "/top_up";
+  static const send = "/send";
+  static const request = "/request";
 
-  static const lastAddition = "/last_addition";
-  static const addAccount = "/add_account";
-  static const currency = "/currency";
   static const dataAndStorage = "/data_storage";
   static const remind = "/remind";
   static const createRemind = "/create_remind";

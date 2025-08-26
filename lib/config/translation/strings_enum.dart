@@ -63,4 +63,21 @@ class Strings {
       'Security code is used to verify your every transaction to be more secure';
 
   static const String confirmPinTitle = 'Confirm Your PIN';
+
+  static const String bottomNavHome = 'Home';
+  static const String bottomNavCashFlow = 'Cashflow';
+  static const String bottomNavMessage = 'Message';
+  static const String bottomNavProfile = 'Profile';
+  static const String bottomNavPay = 'Pay';
+
+  static const String homeBalance = 'Balance';
+  static const String homeTopUp = 'Top Up';
+  static const String homeSend = 'Send';
+  static const String homeRequest = 'Request';
+  static const String homeInternet = 'Internet';
+  static const String homeGold = 'Gold';
+  static const String homeElectricity = 'Electricity';
+  static const String homeOthers = 'Others';
+  static const String homePromoForYou = 'Promo For You';
+  static const String homeFinancialArticles = 'Financial Articles';
 }

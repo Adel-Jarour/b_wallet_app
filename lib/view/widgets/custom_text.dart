@@ -24,7 +24,7 @@ class CustomText extends StatelessWidget {
     this.color,
     this.fontWeight = FontWeight.w400,
     this.textAlign = TextAlign.start,
-    this.overflow = TextOverflow.ellipsis,
+    this.overflow,
     this.wordSpacing = 1,
     this.decoration = TextDecoration.none,
     this.fontFamily = "Inter_18pt",
@@ -47,6 +47,7 @@ class CustomText extends StatelessWidget {
         wordSpacing: wordSpacing,
         fontFamily: fontFamily,
         letterSpacing: letterSpacing,
+        overflow: overflow,
       ),
       textAlign: textAlign,
     );
