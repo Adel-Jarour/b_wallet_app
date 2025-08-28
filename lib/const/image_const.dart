@@ -20,4 +20,6 @@ class ImageConst {
   static String requestIcon = "assets/icons/request.svg";
   static String sendIcon = "assets/icons/send.svg";
   static String topUpIcon = "assets/icons/top_up.svg";
+  static String percentIcon = "assets/icons/percent.svg";
+  static String speakerIcon = "assets/icons/speaker.svg";
 }

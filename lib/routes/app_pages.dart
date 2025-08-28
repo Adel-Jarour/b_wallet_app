@@ -1,4 +1,5 @@
 import 'package:b_wallet/routes/app_routes.dart';
+import 'package:b_wallet/view/home/notify/notification_screen.dart';
 import 'package:b_wallet/view/screens/auth/forget_pass/email/email_screen.dart';
 import 'package:b_wallet/view/screens/auth/forget_pass/forget_pass_method/forget_pass_method_screen.dart';
 import 'package:b_wallet/view/screens/auth/forget_pass/otp/otp_screen.dart';
@@ -53,6 +54,11 @@ class AppPages {
     GetPage(
       name: Routes.confirmPin,
       page: () => ConfirmPinScreen(),
+      transition: Transition.leftToRightWithFade,
+    ),
+    GetPage(
+      name: Routes.notify,
+      page: () => NotificationScreen(),
       transition: Transition.leftToRightWithFade,
     ),
   ];

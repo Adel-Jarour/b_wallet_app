@@ -10,8 +10,8 @@ class Routes {
   static const topUp = "/top_up";
   static const send = "/send";
   static const request = "/request";
+  static const notify = "/notify";
 
-  static const dataAndStorage = "/data_storage";
   static const remind = "/remind";
   static const createRemind = "/create_remind";
   static const regularPayments = "/regular_payments";

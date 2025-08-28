@@ -80,4 +80,8 @@ class Strings {
   static const String homeOthers = 'Others';
   static const String homePromoForYou = 'Promo For You';
   static const String homeFinancialArticles = 'Financial Articles';
+
+  static const String notificationAppBarTitle = 'Notification';
+  static const String notificationNoReceived =
+      'You received no notification. We will keep you updated.';
 }

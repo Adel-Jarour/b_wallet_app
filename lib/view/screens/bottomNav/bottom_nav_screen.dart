@@ -9,68 +9,15 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
 class BottomNavScreen extends StatelessWidget {
-  const BottomNavScreen({super.key});
+  BottomNavScreen({super.key});
+
+  final controller = Get.lazyPut(() => HomeController());
 
   @override
   Widget build(BuildContext context) {
     return GetBuilder<HomeController>(
-      init: HomeController(),
       builder: (controller) => Scaffold(
-        // appBar: PreferredSize(
-        //   preferredSize: Size.fromHeight(120.h),
-        //   child: Container(
-        //     padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 20.h),
-        //     decoration: const BoxDecoration(
-        //       gradient: LinearGradient(
-        //         colors: [Color(0xFF3A8DFF), Color(0xFF0056D6)],
-        //         begin: Alignment.topLeft,
-        //         end: Alignment.bottomRight,
-        //       ),
-        //     ),
-        //     child: SafeArea(
-        //       child: Column(
-        //         crossAxisAlignment: CrossAxisAlignment.start,
-        //         children: [
-        //           // Balance + Notification
-        //           Row(
-        //             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        //             children: [
-        //               Text(
-        //                 "Saldo Balance",
-        //                 style: TextStyle(
-        //                   color: Colors.white,
-        //                   fontSize: 18.sp,
-        //                   fontWeight: FontWeight.bold,
-        //                 ),
-        //               ),
-        //               const Icon(Icons.notifications, color: Colors.white),
-        //             ],
-        //           ),
-        //           SizedBox(height: 10.h),
-        //
-        //           // Carousel Dots
-        //           Row(
-        //             children: List.generate(
-        //               5,
-        //               (index) => Container(
-        //                 margin: EdgeInsets.only(right: 6.w),
-        //                 width: index == 0 ? 12.w : 6.w,
-        //                 height: 6.h,
-        //                 decoration: BoxDecoration(
-        //                   color: index == 0 ? Colors.white : Colors.white54,
-        //                   borderRadius: BorderRadius.circular(6),
-        //                 ),
-        //               ),
-        //             ),
-        //           )
-        //         ],
-        //       ),
-        //     ),
-        //   ),
-        // ),
-
         body: controller.screens[controller.bottomNavIndex],
-
         floatingActionButton: SizedBox(
           width: 70.w,
           height: 70.h,
@@ -98,7 +45,6 @@ class BottomNavScreen extends StatelessWidget {
           ),
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-
         bottomNavigationBar: BottomAppBar(
           padding: EdgeInsets.zero,
           color: ColorConst.whiteColor,

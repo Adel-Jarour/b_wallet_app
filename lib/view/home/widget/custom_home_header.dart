@@ -2,6 +2,7 @@ import 'package:b_wallet/config/translation/strings_enum.dart';
 import 'package:b_wallet/const/color_const.dart';
 import 'package:b_wallet/const/image_const.dart';
 import 'package:b_wallet/controller/home_controller.dart';
+import 'package:b_wallet/routes/app_routes.dart';
 import 'package:b_wallet/view/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -119,33 +120,53 @@ class CustomHomeHeaderBalance extends StatelessWidget {
               SizedBox(
                 height: 12.h,
               ),
-              Row(
-                children: [
-                  ...List.generate(
-                    5,
-                    (index) => Container(
-                      width: 8.r,
-                      height: 8.r,
-                      margin: EdgeInsetsDirectional.only(end: 5.w),
-                      decoration: BoxDecoration(
-                        color: ColorConst.whiteColor,
-                        shape: BoxShape.circle,
-                      ),
+              GetBuilder<HomeController>(
+                builder: (controller) => Row(
+                  children: [
+                    controller.showBalance
+                        ? CustomText(
+                            txt: '\$ 5000',
+                            fontSize: 24.sp,
+                            fontWeight: FontWeight.bold,
+                            color: ColorConst.whiteColor,
+                          )
+                        : Row(
+                            children: List.generate(
+                              5,
+                              (index) => Container(
+                                width: 8.r,
+                                height: 8.r,
+                                margin: EdgeInsetsDirectional.only(end: 5.w),
+                                decoration: BoxDecoration(
+                                  color: ColorConst.whiteColor,
+                                  shape: BoxShape.circle,
+                                ),
+                              ),
+                            ),
+                          ),
+                    SizedBox(
+                      width: 7.w,
                     ),
-                  ),
-                  SizedBox(
-                    width: 7.w,
-                  ),
-                  Icon(
-                    Icons.visibility,
-                    color: ColorConst.whiteColor.withValues(alpha: 0.5),
-                  ),
-                ],
+                    IconButton(
+                      onPressed: () {
+                        controller.updateShownBalance();
+                      },
+                      icon: Icon(
+                        controller.showBalance
+                            ? Icons.visibility_off
+                            : Icons.visibility,
+                      ),
+                      color: ColorConst.whiteColor.withValues(alpha: 0.5),
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
           InkWell(
-            onTap: () {},
+            onTap: () {
+              Get.toNamed(Routes.notify);
+            },
             child: Container(
               height: 48.r,
               width: 48.r,

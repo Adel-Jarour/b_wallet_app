@@ -68,4 +68,11 @@ class HomeController extends GetxController {
       navigateTo: '',
     ),
   ];
+
+  bool showBalance = false;
+
+  void updateShownBalance() {
+    showBalance = !showBalance;
+    update();
+  }
 }
