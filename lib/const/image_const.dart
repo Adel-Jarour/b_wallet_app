@@ -22,4 +22,16 @@ class ImageConst {
   static String topUpIcon = "assets/icons/top_up.svg";
   static String percentIcon = "assets/icons/percent.svg";
   static String speakerIcon = "assets/icons/speaker.svg";
+  static String arrowNextIcon = "assets/icons/arrow_next.svg";
+  static String balanceIcon = "assets/icons/balance.svg";
+  static String cardIcon = "assets/icons/card.svg";
+  static String contactIcon = "assets/icons/contact.svg";
+  static String helpIcon = "assets/icons/help.svg";
+  static String logOutIcon = "assets/icons/log_out.svg";
+  static String privacyIcon = "assets/icons/privacy.svg";
+  static String referralIcon = "assets/icons/referral.svg";
+  static String securityIcon = "assets/icons/security.svg";
+  static String termsIcon = "assets/icons/terms.svg";
+  static String cameraIcon = "assets/icons/camera.svg";
+  static String birthdayIcon = "assets/icons/birthday.svg";
 }

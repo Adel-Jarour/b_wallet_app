@@ -24,6 +24,8 @@ class Strings {
   static const String buttonSavePass = 'Save Password';
   static const String buttonOk = 'OK';
   static const String buttonResetPassword = 'Reset Password';
+  static const String buttonEditProfile = 'Click here to edit profile';
+  static const String buttonSaveChange = 'Save Change';
 
   static const String splashBottomMsg = 'Your best choice for e-wallet';
 
@@ -84,4 +86,17 @@ class Strings {
   static const String notificationAppBarTitle = 'Notification';
   static const String notificationNoReceived =
       'You received no notification. We will keep you updated.';
+
+  static const String profileBalance = 'Balance';
+  static const String profileSavedCard = 'Saved Card';
+  static const String profileReferralCode = 'Referral Code';
+  static const String profileAppSetting = 'App Setting';
+  static const String profileSecurityPin = 'Security Pin';
+  static const String profileHelp = 'Help';
+  static const String profileTermCondition = 'Term & Condition';
+  static const String profilePrivacyPolicy = 'Privacy Policy';
+  static const String profileContact = 'Contact';
+  static const String profileLogOut = 'Log Out';
+
+  static const String profileSettingAppBarTitle = 'Profile Setting';
 }

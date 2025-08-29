@@ -11,8 +11,8 @@ class Routes {
   static const send = "/send";
   static const request = "/request";
   static const notify = "/notify";
+  static const profileSetting = "/profile_setting";
 
-  static const remind = "/remind";
   static const createRemind = "/create_remind";
   static const regularPayments = "/regular_payments";
   static const settings = "/settings";
