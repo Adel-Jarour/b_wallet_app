@@ -9,6 +9,9 @@ class Strings {
   static const String textFieldBirthday = 'Birthday';
   static const String textFieldNewPassword = 'New Password';
   static const String textFieldConfirmNewPassword = 'Confirm New Password';
+  static const String textFieldChoose = 'Choose';
+  static const String textFieldYear = 'YY';
+  static const String textFieldMonth = 'MM';
 
   static const String notifyWrong = 'Wrong';
   static const String notifyChooseForgetMethod =
@@ -26,6 +29,21 @@ class Strings {
   static const String buttonResetPassword = 'Reset Password';
   static const String buttonEditProfile = 'Click here to edit profile';
   static const String buttonSaveChange = 'Save Change';
+  static const String buttonAddNewCard = 'Add New Card';
+  static const String buttonSaveCard = 'Save Card';
+  static const String buttonDeleteCard = 'Delete Card';
+  static const String buttonNO = 'NO';
+
+  static const String errorPleaseSelectCardType = 'Please select a card type';
+  static const String errorPleaseEnterCardNum = 'Please enter card number';
+  static const String errorCardNumMust16Digits =
+      'Card number must be 16 digits';
+  static const String errorPleaseEnterValidMonth = 'Enter a valid MM date';
+  static const String errorPleaseEnterValidYear = 'Enter a valid YY date';
+  static const String errorPleaseEnterCVC = 'Please enter CVC';
+  static const String errorCVCMust3Digits = 'CVC must be 3 digits';
+  static const String errorPleaseSelectMonth = 'Please select a month';
+  static const String errorPleaseSelectYear = 'Please select a year';
 
   static const String splashBottomMsg = 'Your best choice for e-wallet';
 
@@ -99,4 +117,17 @@ class Strings {
   static const String profileLogOut = 'Log Out';
 
   static const String profileSettingAppBarTitle = 'Profile Setting';
+
+  static const String savedCardMasterCard = 'MasterCard';
+  static const String savedCardVISA = 'VISA';
+  static const String savedCardPaypal = 'Paypal';
+  static const String addCardChooseCard = 'Choose Card';
+  static const String addCardCardNumber = 'Card Number';
+  static const String addCardExpiredDate = 'Expired Date';
+  static const String addCardCVC = 'CVC';
+
+  static const String termsAndCondition =
+      '''Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.''';
 }

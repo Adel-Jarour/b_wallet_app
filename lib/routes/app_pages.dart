@@ -1,5 +1,8 @@
+import 'package:b_wallet/config/translation/terms_and_condition/terms_and_condition_screen.dart';
 import 'package:b_wallet/routes/app_routes.dart';
 import 'package:b_wallet/view/home/notify/notification_screen.dart';
+import 'package:b_wallet/view/profile/add_new_card/add_new_card_screen.dart';
+import 'package:b_wallet/view/profile/card/saved_card_screen.dart';
 import 'package:b_wallet/view/profile/profile_setting/profile_setting_screen.dart';
 import 'package:b_wallet/view/screens/auth/forget_pass/email/email_screen.dart';
 import 'package:b_wallet/view/screens/auth/forget_pass/forget_pass_method/forget_pass_method_screen.dart';
@@ -65,6 +68,21 @@ class AppPages {
     GetPage(
       name: Routes.profileSetting,
       page: () => ProfileSettingScreen(),
+      transition: Transition.leftToRightWithFade,
+    ),
+    GetPage(
+      name: Routes.savedCard,
+      page: () => SavedCardScreen(),
+      transition: Transition.leftToRightWithFade,
+    ),
+    GetPage(
+      name: Routes.addNewCard,
+      page: () => AddNewCardScreen(),
+      transition: Transition.leftToRightWithFade,
+    ),
+    GetPage(
+      name: Routes.termsAndCondition,
+      page: () => TermsAndConditionScreen(),
       transition: Transition.leftToRightWithFade,
     ),
   ];

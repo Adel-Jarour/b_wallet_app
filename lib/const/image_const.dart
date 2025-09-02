@@ -1,9 +1,13 @@
 class ImageConst {
   static String logoApp = "assets/icons/logo.svg";
 
-  static String lockIcon = "assets/icons/lock.svg";
   static String waves = "assets/icons/waves.png";
   static String homeAppBarWave = "assets/icons/home_appBar_wave.png";
+  static String masterCard = "assets/icons/master_card.png";
+  static String visa = "assets/icons/visa.png";
+  static String paypal = "assets/icons/paypal.png";
+
+  static String lockIcon = "assets/icons/lock.svg";
   static String backIcon = "assets/icons/back.svg";
   static String smsIcon = "assets/icons/sms.svg";
   static String emailIcon = "assets/icons/email.svg";
@@ -34,4 +38,5 @@ class ImageConst {
   static String termsIcon = "assets/icons/terms.svg";
   static String cameraIcon = "assets/icons/camera.svg";
   static String birthdayIcon = "assets/icons/birthday.svg";
+  static String arrowDownIcon = "assets/icons/arrow_down.svg";
 }

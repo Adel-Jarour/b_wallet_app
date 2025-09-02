@@ -12,10 +12,10 @@ class Routes {
   static const request = "/request";
   static const notify = "/notify";
   static const profileSetting = "/profile_setting";
+  static const savedCard = "/saved_card";
+  static const addNewCard = "/add_new_card";
+  static const termsAndCondition = "/terms_and_condition";
 
-  static const createRemind = "/create_remind";
-  static const regularPayments = "/regular_payments";
-  static const settings = "/settings";
   static const addTransactions = "/add_transactions";
   static const createRegularPayment = "/create_regular_payment";
   static const scanQR = "/scan_qr";

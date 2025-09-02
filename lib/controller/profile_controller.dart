@@ -1,6 +1,7 @@
 import 'package:b_wallet/config/translation/strings_enum.dart';
 import 'package:b_wallet/const/image_const.dart';
 import 'package:b_wallet/models/profile_setting_model.dart';
+import 'package:b_wallet/routes/app_routes.dart';
 import 'package:get/get.dart';
 
 class ProfileController extends GetxController {
@@ -15,7 +16,9 @@ class ProfileController extends GetxController {
       icon: ImageConst.cardIcon,
       title: Strings.profileSavedCard,
       value: "2 cards",
-      onTap: () {},
+      onTap: () {
+        Get.toNamed(Routes.savedCard);
+      },
     ),
     ProfileSettingModel(
       icon: ImageConst.referralIcon,
@@ -39,7 +42,9 @@ class ProfileController extends GetxController {
     ProfileSettingModel(
       icon: ImageConst.termsIcon,
       title: Strings.profileTermCondition,
-      onTap: () {},
+      onTap: () {
+        Get.toNamed(Routes.termsAndCondition);
+      },
     ),
     ProfileSettingModel(
       icon: ImageConst.privacyIcon,

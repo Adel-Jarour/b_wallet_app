@@ -4,11 +4,10 @@ import 'package:b_wallet/const/image_const.dart';
 import 'package:b_wallet/view/profile/profile_setting/widget/custom_profile_image.dart';
 import 'package:b_wallet/view/widgets/custom_arrow_back.dart';
 import 'package:b_wallet/view/widgets/custom_button.dart';
+import 'package:b_wallet/view/widgets/custom_input_field.dart';
 import 'package:b_wallet/view/widgets/custom_text.dart';
-import 'package:b_wallet/view/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class ProfileSettingScreen extends StatelessWidget {
   const ProfileSettingScreen({super.key});
@@ -46,65 +45,37 @@ class ProfileSettingScreen extends StatelessWidget {
               SizedBox(
                 height: 32.h,
               ),
-              _profileSetting(
+              CustomInputField(
                 title: Strings.textFieldName,
-                value: 'Adel Jarour',
+                controller: TextEditingController(text: 'Adel Jarour'),
               ),
               SizedBox(
                 height: 20.h,
               ),
-              _profileSetting(
+              CustomInputField(
                 title: Strings.textFieldEmailAddress,
-                value: 'adel.jarour@gmail.com',
+                controller:
+                    TextEditingController(text: 'adel.jarour@gmail.com'),
               ),
               SizedBox(
                 height: 20.h,
               ),
-              _profileSetting(
+              CustomInputField(
                 title: Strings.textFieldPhoneNum,
-                value: '+972567022104',
+                controller: TextEditingController(text: '0567022104'),
               ),
               SizedBox(
                 height: 20.h,
               ),
-              _profileSetting(
+              CustomInputField(
                 title: Strings.textFieldBirthday,
-                value: '26 April 2001',
+                controller: TextEditingController(text: '24 April 2001'),
                 icon: ImageConst.birthdayIcon,
               ),
             ],
           ),
         ),
       ),
-    );
-  }
-
-  Widget _profileSetting({required String title, String? value, String? icon}) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        CustomText(
-          txt: title,
-          fontSize: 16.sp,
-          fontWeight: FontWeight.w600,
-        ),
-        SizedBox(
-          height: 10.h,
-        ),
-        CustomTextFormField(
-          fillColor: ColorConst.grey5Color,
-          controller: TextEditingController(text: value),
-          suffixIcon: icon != null
-              ? SvgPicture.asset(
-                  icon,
-                  colorFilter: ColorFilter.mode(
-                    ColorConst.grey2Color,
-                    BlendMode.srcIn,
-                  ),
-                )
-              : null,
-        ),
-      ],
     );
   }
 }

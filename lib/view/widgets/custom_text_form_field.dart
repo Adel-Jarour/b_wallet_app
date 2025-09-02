@@ -1,5 +1,6 @@
 import 'package:b_wallet/const/color_const.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
@@ -14,9 +15,9 @@ class CustomTextFormField extends StatelessWidget {
   final Widget? prefixIcon;
   final Widget? suffixIcon;
   final Function? onPressedPrefixIcon;
-  final Function? validator;
+  final String? Function(String?)? validator;
   final Function? onEditingComplete;
-  final Function? onTap;
+  final Future<void> Function()? onTap;
   final Function(String)? onChanged;
   final TextInputType? keyboardType;
   final TextEditingController? controller;
@@ -36,6 +37,7 @@ class CustomTextFormField extends StatelessWidget {
   final double? hintFontSize;
   final TextDirection? textDirection;
   final bool readOnly;
+  final List<TextInputFormatter>? inputFormat;
 
   const CustomTextFormField({
     super.key,
@@ -71,17 +73,18 @@ class CustomTextFormField extends StatelessWidget {
     this.readOnly = false,
     this.onChanged,
     this.errorTxt,
+    this.inputFormat,
   });
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      onTap: (onTap != null) ? onTap!() : null,
+      onTap: onTap,
       focusNode: focusNode,
       autofocus: autofocus,
       initialValue: initialValue,
       controller: controller,
-      validator: (value) => validator!(value),
+      validator: validator,
       onEditingComplete: () => onEditingComplete,
       onTapOutside: (x) {
         FocusManager.instance.primaryFocus?.unfocus();
@@ -123,25 +126,25 @@ class CustomTextFormField extends StatelessWidget {
         errorText: errorTxt,
         fillColor: fillColor ?? Colors.transparent,
         filled: true,
-        focusedBorder: (fillColor != null)
-            ? InputBorder.none
-            : OutlineInputBorder(
-                borderRadius: BorderRadius.circular(8),
-                borderSide: BorderSide(color: ColorConst.grey3Color),
-              ),
-        enabledBorder: (fillColor != null)
-            ? InputBorder.none
-            : OutlineInputBorder(
-                borderRadius: BorderRadius.circular(8),
-                borderSide: BorderSide(color: ColorConst.grey3Color),
-              ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(8),
+          borderSide: (fillColor != null)
+              ? BorderSide.none
+              : BorderSide(color: ColorConst.grey3Color),
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(8),
+          borderSide: (fillColor != null)
+              ? BorderSide.none
+              : BorderSide(color: ColorConst.grey3Color),
+        ),
         errorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
           borderSide: BorderSide(color: ColorConst.softRedColor),
         ),
         focusedErrorBorder: OutlineInputBorder(
           borderSide: BorderSide(
-            color: context.isDarkMode ? Colors.red : Colors.red,
+            color: ColorConst.redColor,
           ),
           borderRadius: BorderRadius.circular(15.r),
         ),
@@ -167,12 +170,15 @@ class CustomTextFormField extends StatelessWidget {
                 child: suffixIcon,
               )
             : null,
+        suffixIconConstraints: BoxConstraints(maxWidth: 40.w),
         suffixIconColor: suffixIconColor ?? Colors.white,
         prefixIconColor: prefixIconColor ?? Colors.white,
+        counterText: '',
       ),
       enabled: enabled,
       keyboardType: keyboardType,
       obscureText: obscureText!,
+      inputFormatters: inputFormat,
     );
   }
 }
