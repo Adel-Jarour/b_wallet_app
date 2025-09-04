@@ -1,8 +1,8 @@
 import 'package:b_wallet/config/translation/strings_enum.dart';
 import 'package:b_wallet/controller/profile_controller.dart';
-import 'package:b_wallet/view/profile/widget/custom_account_item.dart';
-import 'package:b_wallet/view/profile/widget/custom_profile_header.dart';
-import 'package:b_wallet/view/profile/widget/custom_profile_setting.dart';
+import 'package:b_wallet/view/screens/profile/widget/custom_account_item.dart';
+import 'package:b_wallet/view/screens/profile/widget/custom_profile_header.dart';
+import 'package:b_wallet/view/screens/profile/widget/custom_profile_setting.dart';
 import 'package:b_wallet/view/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

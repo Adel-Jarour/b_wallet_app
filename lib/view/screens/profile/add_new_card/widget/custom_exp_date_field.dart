@@ -1,6 +1,6 @@
 import 'package:b_wallet/config/translation/strings_enum.dart';
 import 'package:b_wallet/controller/add_new_card_controller.dart';
-import 'package:b_wallet/view/profile/add_new_card/widget/custom_drop_down_text_field.dart';
+import 'package:b_wallet/view/screens/profile/add_new_card/widget/custom_drop_down_text_field.dart';
 import 'package:b_wallet/view/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

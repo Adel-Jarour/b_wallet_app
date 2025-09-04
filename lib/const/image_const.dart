@@ -39,4 +39,6 @@ class ImageConst {
   static String cameraIcon = "assets/icons/camera.svg";
   static String birthdayIcon = "assets/icons/birthday.svg";
   static String arrowDownIcon = "assets/icons/arrow_down.svg";
+  static String atIcon = "assets/icons/at.svg";
+  static String whatsAppIcon = "assets/icons/whatsApp.svg";
 }

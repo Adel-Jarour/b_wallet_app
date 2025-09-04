@@ -15,9 +15,9 @@ class Routes {
   static const savedCard = "/saved_card";
   static const addNewCard = "/add_new_card";
   static const termsAndCondition = "/terms_and_condition";
+  static const privacyPolicy = "/privacy_policy";
+  static const contact = "/contact";
 
-  static const addTransactions = "/add_transactions";
-  static const createRegularPayment = "/create_regular_payment";
   static const scanQR = "/scan_qr";
   static const login = "/login";
   static const signUp = "/sign_up";

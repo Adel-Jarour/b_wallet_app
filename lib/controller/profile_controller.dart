@@ -49,12 +49,16 @@ class ProfileController extends GetxController {
     ProfileSettingModel(
       icon: ImageConst.privacyIcon,
       title: Strings.profilePrivacyPolicy,
-      onTap: () {},
+      onTap: () {
+        Get.toNamed(Routes.privacyPolicy);
+      },
     ),
     ProfileSettingModel(
       icon: ImageConst.contactIcon,
       title: Strings.profileContact,
-      onTap: () {},
+      onTap: () {
+        Get.toNamed(Routes.contact);
+      },
     ),
   ];
 

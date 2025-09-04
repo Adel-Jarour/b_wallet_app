@@ -4,10 +4,10 @@ import 'package:b_wallet/const/image_const.dart';
 import 'package:b_wallet/models/home_category_model.dart';
 import 'package:b_wallet/models/home_header_model.dart';
 import 'package:b_wallet/routes/app_routes.dart';
-import 'package:b_wallet/view/cash_flow/cash_flow_screen.dart';
-import 'package:b_wallet/view/home/home_screen.dart';
-import 'package:b_wallet/view/message/message_screen.dart';
-import 'package:b_wallet/view/profile/profile_screen.dart';
+import 'package:b_wallet/view/screens/cash_flow/cash_flow_screen.dart';
+import 'package:b_wallet/view/screens/home/home_screen.dart';
+import 'package:b_wallet/view/screens/message/message_screen.dart';
+import 'package:b_wallet/view/screens/profile/profile_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 

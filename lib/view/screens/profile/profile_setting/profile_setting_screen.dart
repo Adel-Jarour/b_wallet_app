@@ -1,7 +1,7 @@
 import 'package:b_wallet/config/translation/strings_enum.dart';
 import 'package:b_wallet/const/color_const.dart';
 import 'package:b_wallet/const/image_const.dart';
-import 'package:b_wallet/view/profile/profile_setting/widget/custom_profile_image.dart';
+import 'package:b_wallet/view/screens/profile/profile_setting/widget/custom_profile_image.dart';
 import 'package:b_wallet/view/widgets/custom_arrow_back.dart';
 import 'package:b_wallet/view/widgets/custom_button.dart';
 import 'package:b_wallet/view/widgets/custom_input_field.dart';
