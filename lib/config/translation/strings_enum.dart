@@ -33,6 +33,7 @@ class Strings {
   static const String buttonSaveCard = 'Save Card';
   static const String buttonDeleteCard = 'Delete Card';
   static const String buttonNO = 'NO';
+  static const String buttonSeeAllTransaction = 'See All Transaction';
 
   static const String errorPleaseSelectCardType = 'Please select a card type';
   static const String errorPleaseEnterCardNum = 'Please enter card number';
@@ -142,4 +143,12 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
   static const String contactDesc3 = 'Contact us with this following contact:';
   static const String contactEmail = 'Email';
   static const String contactWhatsapp = 'Whatsapp';
+
+  static const String cashFlowCurrentBalance = 'Current Balance';
+  static const String cashFlowIncome = 'Income';
+  static const String cashFlowExpense = 'Expense';
+  static const String cashFlowMoneyTracker = 'Money Tracker';
+  static const String cashFlowYouDoingWellYourMoney =
+      'You’re doing well with your money';
+  static const String cashFlowTransactionHistory = 'Transaction History';
 }
