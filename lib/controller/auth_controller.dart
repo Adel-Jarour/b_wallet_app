@@ -32,7 +32,7 @@ class AuthController extends GetxController {
       () {
         loginSubmittedAnimation = false;
         update(['login_submit']);
-        Get.toNamed(Routes.home);
+        Get.offAllNamed(Routes.home);
       },
     );
   }

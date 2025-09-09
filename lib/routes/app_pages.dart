@@ -6,6 +6,7 @@ import 'package:b_wallet/view/screens/auth/forget_pass/reset_password/reset_pass
 import 'package:b_wallet/view/screens/auth/sign_up/pin/confirm_pin_screen.dart';
 import 'package:b_wallet/view/screens/auth/sign_up/pin/pin_screen.dart';
 import 'package:b_wallet/view/screens/bottomNav/bottom_nav_screen.dart';
+import 'package:b_wallet/view/screens/cash_flow/transaction_history/transaction_history_screen.dart';
 import 'package:b_wallet/view/screens/home/notify/notification_screen.dart';
 import 'package:b_wallet/view/screens/profile/add_new_card/add_new_card_screen.dart';
 import 'package:b_wallet/view/screens/profile/card/saved_card_screen.dart';
@@ -95,6 +96,11 @@ class AppPages {
     GetPage(
       name: Routes.contact,
       page: () => ContactScreen(),
+      transition: Transition.leftToRightWithFade,
+    ),
+    GetPage(
+      name: Routes.transactionHistory,
+      page: () => TransactionHistoryScreen(),
       transition: Transition.leftToRightWithFade,
     ),
   ];

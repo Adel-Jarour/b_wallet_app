@@ -17,8 +17,8 @@ class Routes {
   static const termsAndCondition = "/terms_and_condition";
   static const privacyPolicy = "/privacy_policy";
   static const contact = "/contact";
+  static const transactionHistory = "/transaction_history";
 
-  static const scanQR = "/scan_qr";
   static const login = "/login";
   static const signUp = "/sign_up";
 }

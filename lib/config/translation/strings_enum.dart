@@ -151,4 +151,6 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
   static const String cashFlowYouDoingWellYourMoney =
       'You’re doing well with your money';
   static const String cashFlowTransactionHistory = 'Transaction History';
+  static const String transactionHistoryToday = 'Today';
+  static const String transactionHistoryYesterday = 'Yesterday';
 }

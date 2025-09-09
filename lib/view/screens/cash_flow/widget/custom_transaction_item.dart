@@ -1,12 +1,14 @@
 import 'package:b_wallet/const/color_const.dart';
-import 'package:b_wallet/const/image_const.dart';
+import 'package:b_wallet/models/transaction_model.dart';
 import 'package:b_wallet/view/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class CustomTransactionItem extends StatelessWidget {
-  const CustomTransactionItem({super.key});
+  const CustomTransactionItem({super.key, required this.transaction});
+
+  final TransactionModel transaction;
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +36,7 @@ class CustomTransactionItem extends StatelessWidget {
                 margin: EdgeInsetsDirectional.symmetric(vertical: 4.h),
                 alignment: Alignment.center,
                 child: SvgPicture.asset(
-                  ImageConst.percentIcon,
+                  transaction.icon,
                   colorFilter:
                       ColorFilter.mode(ColorConst.orangeColor, BlendMode.srcIn),
                 ),
@@ -47,12 +49,12 @@ class CustomTransactionItem extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   CustomText(
-                    txt: 'Cashback Promo',
+                    txt: transaction.title,
                     fontSize: 14.sp,
                     fontWeight: FontWeight.w600,
                   ),
                   CustomText(
-                    txt: '1 Jan 2020',
+                    txt: transaction.date,
                     fontSize: 12.sp,
                     color: ColorConst.grey1Color,
                   ),
@@ -61,10 +63,14 @@ class CustomTransactionItem extends StatelessWidget {
             ],
           ),
           CustomText(
-            txt: '+\$16,000',
+            txt: transaction.transactionType == TransactionType.income
+                ? '+\$${transaction.price}'
+                : '-\$${transaction.price}',
             fontSize: 16.sp,
             fontWeight: FontWeight.w600,
-            color: ColorConst.greenColor,
+            color: transaction.transactionType == TransactionType.income
+                ? ColorConst.greenColor
+                : ColorConst.blackColor,
           ),
         ],
       ),

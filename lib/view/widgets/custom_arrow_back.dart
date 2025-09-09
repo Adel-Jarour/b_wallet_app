@@ -1,3 +1,4 @@
+import 'package:b_wallet/const/color_const.dart';
 import 'package:b_wallet/const/image_const.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -5,7 +6,9 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
 class CustomArrowBack extends StatelessWidget {
-  const CustomArrowBack({super.key});
+  const CustomArrowBack({super.key, this.color});
+
+  final Color? color;
 
   @override
   Widget build(BuildContext context) {
@@ -17,6 +20,10 @@ class CustomArrowBack extends StatelessWidget {
         ImageConst.backIcon,
         width: 18.w,
         height: 14.h,
+        colorFilter: ColorFilter.mode(
+          color ?? ColorConst.whiteColor,
+          BlendMode.srcIn,
+        ),
       ),
     );
   }
