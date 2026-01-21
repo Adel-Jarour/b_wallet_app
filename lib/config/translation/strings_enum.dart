@@ -153,4 +153,9 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
   static const String cashFlowTransactionHistory = 'Transaction History';
   static const String transactionHistoryToday = 'Today';
   static const String transactionHistoryYesterday = 'Yesterday';
+
+  static const String helpItemWhatBWalletApp = 'What is B-Wallet App?';
+  static const String helpItemGeneralInformation = 'General Information';
+  static const String helpItemClaimPromo = 'Claim Promo';
+  static const String helpItemPayment = 'Payment';
 }

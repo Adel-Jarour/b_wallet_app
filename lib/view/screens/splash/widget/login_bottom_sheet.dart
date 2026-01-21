@@ -45,8 +45,8 @@ class CustomAuthBottomSheet extends StatelessWidget {
                   );
                 },
                 child: controller.currentSheet == AuthSheetType.login
-                    ? LoginScreen(key: const ValueKey("login"))
-                    : SignUpScreen(key: const ValueKey("signup")),
+                    ? LoginScreen()
+                    : SignUpScreen(),
               ),
             ),
           );

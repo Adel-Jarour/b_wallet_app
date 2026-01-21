@@ -18,7 +18,5 @@ class Routes {
   static const privacyPolicy = "/privacy_policy";
   static const contact = "/contact";
   static const transactionHistory = "/transaction_history";
-
-  static const login = "/login";
-  static const signUp = "/sign_up";
+  static const help = "/help";
 }

@@ -11,6 +11,7 @@ import 'package:b_wallet/view/screens/home/notify/notification_screen.dart';
 import 'package:b_wallet/view/screens/profile/add_new_card/add_new_card_screen.dart';
 import 'package:b_wallet/view/screens/profile/card/saved_card_screen.dart';
 import 'package:b_wallet/view/screens/profile/contact/contact_screen.dart';
+import 'package:b_wallet/view/screens/profile/help/help_screen.dart';
 import 'package:b_wallet/view/screens/profile/privacy_policy/privacy_policy_screen.dart';
 import 'package:b_wallet/view/screens/profile/profile_setting/profile_setting_screen.dart';
 import 'package:b_wallet/view/screens/profile/terms_and_condition/terms_and_condition_screen.dart';
@@ -101,6 +102,11 @@ class AppPages {
     GetPage(
       name: Routes.transactionHistory,
       page: () => TransactionHistoryScreen(),
+      transition: Transition.leftToRightWithFade,
+    ),
+    GetPage(
+      name: Routes.help,
+      page: () => HelpScreen(),
       transition: Transition.leftToRightWithFade,
     ),
   ];

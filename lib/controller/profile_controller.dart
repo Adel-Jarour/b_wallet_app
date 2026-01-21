@@ -37,7 +37,9 @@ class ProfileController extends GetxController {
     ProfileSettingModel(
       icon: ImageConst.helpIcon,
       title: Strings.profileHelp,
-      onTap: () {},
+      onTap: () {
+        Get.toNamed(Routes.help);
+      },
     ),
     ProfileSettingModel(
       icon: ImageConst.termsIcon,
