@@ -62,6 +62,7 @@ class AddNewCardController extends GetxController {
   void submitSaveCard() {
     if (formKey.currentState!.validate()) {
       newCard = CardModel(
+        id: 1,
         image: cardTypes[selectedCardTypeIndex].image,
         cardType: cardType.text,
         cardNumber: cardNum.text,

@@ -5,7 +5,6 @@ import 'package:b_wallet/controller/auth_controller.dart';
 import 'package:b_wallet/view/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
 class CustomSplashHeader extends StatelessWidget {
@@ -42,7 +41,7 @@ class CustomSplashHeader extends StatelessWidget {
                   ),
                 ],
               ),
-              child: SvgPicture.asset(ImageConst.logoApp),
+              child: Image.asset(ImageConst.logoApp),
             ),
             SizedBox(height: 20.h),
             CustomText(

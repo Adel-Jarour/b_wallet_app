@@ -11,10 +11,12 @@ class CustomProfileSetting extends StatelessWidget {
     super.key,
     required this.item,
     this.isLogOut = false,
+    this.buttonColor,
   });
 
   final ProfileSettingModel item;
   final bool isLogOut;
+  final Color? buttonColor;
 
   @override
   Widget build(BuildContext context) {
@@ -26,9 +28,11 @@ class CustomProfileSetting extends StatelessWidget {
       ),
       margin: EdgeInsetsDirectional.only(bottom: 16.h),
       decoration: BoxDecoration(
-        color: isLogOut ? ColorConst.redColor : null,
+        color: isLogOut ? ColorConst.redColor : buttonColor,
         borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: ColorConst.grey4Color),
+        border: buttonColor != null
+            ? null
+            : Border.all(color: ColorConst.grey4Color),
       ),
       child: InkWell(
         onTap: item.onTap,

@@ -8,6 +8,9 @@ import 'package:b_wallet/view/screens/auth/sign_up/pin/pin_screen.dart';
 import 'package:b_wallet/view/screens/bottomNav/bottom_nav_screen.dart';
 import 'package:b_wallet/view/screens/cash_flow/transaction_history/transaction_history_screen.dart';
 import 'package:b_wallet/view/screens/home/notify/notification_screen.dart';
+import 'package:b_wallet/view/screens/money_actions/request_screen.dart';
+import 'package:b_wallet/view/screens/money_actions/send_screen.dart';
+import 'package:b_wallet/view/screens/money_actions/top_up/top_up_screen.dart';
 import 'package:b_wallet/view/screens/profile/add_new_card/add_new_card_screen.dart';
 import 'package:b_wallet/view/screens/profile/card/saved_card_screen.dart';
 import 'package:b_wallet/view/screens/profile/contact/contact_screen.dart';
@@ -107,6 +110,21 @@ class AppPages {
     GetPage(
       name: Routes.help,
       page: () => HelpScreen(),
+      transition: Transition.leftToRightWithFade,
+    ),
+    GetPage(
+      name: Routes.topUp,
+      page: () => TopUpScreen(),
+      transition: Transition.leftToRightWithFade,
+    ),
+    GetPage(
+      name: Routes.send,
+      page: () => SendScreen(),
+      transition: Transition.leftToRightWithFade,
+    ),
+    GetPage(
+      name: Routes.request,
+      page: () => RequestScreen(),
       transition: Transition.leftToRightWithFade,
     ),
   ];

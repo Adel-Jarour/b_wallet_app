@@ -1,7 +1,7 @@
 import 'package:b_wallet/config/translation/strings_enum.dart';
 import 'package:b_wallet/const/color_const.dart';
 import 'package:b_wallet/controller/card_controller.dart';
-import 'package:b_wallet/view/screens/profile/card/widget/custom_card_item.dart';
+import 'package:b_wallet/view/screens/profile/card/widget/custom_cards.dart';
 import 'package:b_wallet/view/screens/profile/widget/custom_profile_setting.dart';
 import 'package:b_wallet/view/widgets/custom_arrow_back.dart';
 import 'package:b_wallet/view/widgets/custom_text.dart';
@@ -36,9 +36,8 @@ class SavedCardScreen extends StatelessWidget {
         child: Column(
           children: [
             GetBuilder<CardController>(
-              builder: (_) => controller.cards.isEmpty
-                  ? const SizedBox()
-                  : CustomCardItem(),
+              builder: (_) =>
+                  controller.cards.isEmpty ? const SizedBox() : CustomCards(),
             ),
             SizedBox(
               height: controller.cards.isEmpty ? 0 : 24.h,

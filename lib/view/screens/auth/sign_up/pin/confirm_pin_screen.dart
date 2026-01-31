@@ -2,7 +2,7 @@ import 'package:b_wallet/config/translation/strings_enum.dart';
 import 'package:b_wallet/const/color_const.dart';
 import 'package:b_wallet/controller/pin_controller.dart';
 import 'package:b_wallet/view/screens/auth/sign_up/pin/widget/custom_dots.dart';
-import 'package:b_wallet/view/screens/auth/sign_up/pin/widget/custom_keyboard.dart';
+import 'package:b_wallet/view/widgets/custom_keyboard.dart';
 import 'package:b_wallet/view/widgets/custom_arrow_back.dart';
 import 'package:b_wallet/view/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
@@ -49,7 +49,12 @@ class ConfirmPinScreen extends StatelessWidget {
             SizedBox(height: 48.h),
             const CustomDots(),
             SizedBox(height: 60.h),
-            CustomKeyboard(),
+            CustomKeyboard(
+              remove: controller.removeDigit,
+              add: (String number) {
+                controller.addDigit(number);
+              },
+            ),
           ],
         ),
       ),

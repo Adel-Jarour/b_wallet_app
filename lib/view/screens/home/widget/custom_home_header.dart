@@ -47,30 +47,35 @@ class CustomHomeHeader extends StatelessWidget {
                   controller.headerModels.length,
                   (index) {
                     var e = controller.headerModels[index];
-                    return Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Container(
-                          height: 40.h,
-                          width: 40.w,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(8),
-                            color: e.color,
+                    return InkWell(
+                      onTap: () {
+                        Get.toNamed(e.navigateTo);
+                      },
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Container(
+                            height: 40.h,
+                            width: 40.w,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(8),
+                              color: e.color,
+                            ),
+                            alignment: Alignment.center,
+                            child: SvgPicture.asset(e.icon),
                           ),
-                          alignment: Alignment.center,
-                          child: SvgPicture.asset(e.icon),
-                        ),
-                        SizedBox(
-                          height: 8.h,
-                        ),
-                        CustomText(
-                          txt: e.txt,
-                          fontSize: 14.sp,
-                          fontWeight: FontWeight.w500,
-                          color: ColorConst.blackColor,
-                        ),
-                      ],
+                          SizedBox(
+                            height: 8.h,
+                          ),
+                          CustomText(
+                            txt: e.txt,
+                            fontSize: 14.sp,
+                            fontWeight: FontWeight.w500,
+                            color: ColorConst.blackColor,
+                          ),
+                        ],
+                      ),
                     );
                   },
                 ),

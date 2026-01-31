@@ -22,7 +22,7 @@ class HomeController extends GetxController {
   List<Widget> screens = [
     HomeScreen(),
     CashFlowScreen(),
-    MessageScreen(),
+    const MessageScreen(),
     ProfileScreen(),
   ];
 
@@ -46,6 +46,7 @@ class HomeController extends GetxController {
       navigateTo: Routes.request,
     ),
   ];
+
   List<HomeCategoryModel> categoriesModels = [
     HomeCategoryModel(
       icon: ImageConst.internetIcon,

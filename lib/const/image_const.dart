@@ -1,5 +1,5 @@
 class ImageConst {
-  static String logoApp = "assets/icons/logo.svg";
+  static String logoApp = "assets/icons/logo.png";
 
   static String waves = "assets/icons/waves.png";
   static String homeAppBarWave = "assets/icons/home_appBar_wave.png";

@@ -34,6 +34,7 @@ class Strings {
   static const String buttonDeleteCard = 'Delete Card';
   static const String buttonNO = 'NO';
   static const String buttonSeeAllTransaction = 'See All Transaction';
+  static const String buttonTopUp = 'Top Up';
 
   static const String errorPleaseSelectCardType = 'Please select a card type';
   static const String errorPleaseEnterCardNum = 'Please enter card number';
@@ -158,4 +159,10 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
   static const String helpItemGeneralInformation = 'General Information';
   static const String helpItemClaimPromo = 'Claim Promo';
   static const String helpItemPayment = 'Payment';
+
+  static const String topUpEnterTheNum = 'Enter the number of Top Up';
+  static const String topUpMethodNoCard = 'No Card';
+  static const String topUpMethodCard = 'Top Up Method - ';
+  static const String topUpPleaseChooseYourCard = 'Please Choose Your Card';
+  static const String topUpChooseTopUpMethod = 'Choose Top Up Method';
 }
