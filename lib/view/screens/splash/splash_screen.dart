@@ -1,6 +1,6 @@
 import 'package:b_wallet/const/color_const.dart';
 import 'package:b_wallet/controller/auth_controller.dart';
-import 'package:b_wallet/view/screens/splash/widget/login_bottom_sheet.dart';
+import 'package:b_wallet/view/screens/splash/widget/custom_auth_bottom_sheet.dart';
 import 'package:b_wallet/view/screens/splash/widget/splash_bg_image.dart';
 import 'package:b_wallet/view/screens/splash/widget/splash_header.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +21,7 @@ class SplashScreen extends StatelessWidget {
             children: [
               CustomSplashHeader(),
               CustomSplashBgImage(),
-              if (controller.showBottomSheet) CustomAuthBottomSheet(),
+              CustomAuthBottomSheet(),
             ],
           ),
         );

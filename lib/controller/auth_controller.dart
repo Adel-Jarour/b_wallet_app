@@ -1,4 +1,3 @@
-import 'package:b_wallet/routes/app_routes.dart';
 import 'package:get/get.dart';
 
 class AuthController extends GetxController {
@@ -32,7 +31,7 @@ class AuthController extends GetxController {
       () {
         loginSubmittedAnimation = false;
         update(['login_submit']);
-        Get.offAllNamed(Routes.home);
+        // Get.offAllNamed(Routes.home);
       },
     );
   }

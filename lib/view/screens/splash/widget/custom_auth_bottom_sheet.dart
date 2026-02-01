@@ -11,31 +11,34 @@ class CustomAuthBottomSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final targetHeight = controller.currentSheet == AuthSheetType.login
+        ? 0.55 * MediaQuery.sizeOf(context).height
+        : 0.7 * MediaQuery.sizeOf(context).height;
+
     return Align(
       alignment: Alignment.bottomCenter,
-      child: DraggableScrollableSheet(
-        expand: false,
-        initialChildSize:
-            controller.currentSheet == AuthSheetType.login ? 0.55 : 0.7,
-        minChildSize:
-            controller.currentSheet == AuthSheetType.login ? 0.55 : 0.7,
-        maxChildSize: 0.9,
-        builder: (context, scrollController) {
-          return Container(
-            decoration: const BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.vertical(
-                top: Radius.circular(30),
-              ),
-            ),
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 350),
+        curve: Curves.easeInOut,
+        height: controller.showBottomSheet ? targetHeight : 0,
+        width: double.infinity,
+        alignment: Alignment.bottomCenter,
+        child: Container(
+          decoration: const BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.vertical(top: Radius.circular(30)),
+          ),
+          child: ClipRRect(
+            borderRadius: const BorderRadius.vertical(top: Radius.circular(30)),
             child: SingleChildScrollView(
-              controller: scrollController,
               child: AnimatedSwitcher(
                 duration: const Duration(milliseconds: 350),
                 transitionBuilder: (Widget child, Animation<double> animation) {
                   return SlideTransition(
                     position: Tween<Offset>(
-                      begin: const Offset(1, 0),
+                      begin: controller.currentSheet == AuthSheetType.login
+                          ? const Offset(-1, 0)
+                          : const Offset(1, 0),
                       end: Offset.zero,
                     ).animate(animation),
                     child: FadeTransition(
@@ -45,12 +48,12 @@ class CustomAuthBottomSheet extends StatelessWidget {
                   );
                 },
                 child: controller.currentSheet == AuthSheetType.login
-                    ? LoginScreen()
-                    : SignUpScreen(),
+                    ? LoginScreen(key: const ValueKey('login'))
+                    : SignUpScreen(key: const ValueKey('signup')),
               ),
             ),
-          );
-        },
+          ),
+        ),
       ),
     );
   }

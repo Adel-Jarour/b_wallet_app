@@ -19,80 +19,78 @@ class CashFlowScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: SingleChildScrollView(
-        child: Padding(
-          padding: EdgeInsetsDirectional.only(
-            start: 24.w,
-            end: 24.w,
-            top: 60.h,
-            bottom: 40.h,
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const CustomCashFlowHeader(),
-              SizedBox(
-                height: 32.h,
+    return SingleChildScrollView(
+      child: Padding(
+        padding: EdgeInsetsDirectional.only(
+          start: 24.w,
+          end: 24.w,
+          top: 60.h,
+          bottom: 40.h,
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const CustomCashFlowHeader(),
+            SizedBox(
+              height: 32.h,
+            ),
+            const CustomCashMoneyTracker(),
+            SizedBox(
+              height: 20.h,
+            ),
+            CustomCashChart(),
+            SizedBox(
+              height: 20.h,
+            ),
+            Container(
+              decoration: BoxDecoration(
+                color: ColorConst.lightGreenColor,
+                borderRadius: BorderRadius.circular(8),
               ),
-              const CustomCashMoneyTracker(),
-              SizedBox(
-                height: 20.h,
-              ),
-              CustomCashChart(),
-              SizedBox(
-                height: 20.h,
-              ),
-              Container(
-                decoration: BoxDecoration(
-                  color: ColorConst.lightGreenColor,
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                padding: const EdgeInsetsDirectional.all(18),
-                alignment: Alignment.center,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(
-                      Icons.check_circle,
+              padding: const EdgeInsetsDirectional.all(18),
+              alignment: Alignment.center,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    Icons.check_circle,
+                    color: ColorConst.greenColor,
+                  ),
+                  SizedBox(
+                    width: 14.w,
+                  ),
+                  Flexible(
+                    child: CustomText(
+                      txt: Strings.cashFlowYouDoingWellYourMoney,
+                      fontSize: 13.sp,
+                      fontWeight: FontWeight.w600,
                       color: ColorConst.greenColor,
+                      height: 1.3,
                     ),
-                    SizedBox(
-                      width: 14.w,
-                    ),
-                    Flexible(
-                      child: CustomText(
-                        txt: Strings.cashFlowYouDoingWellYourMoney,
-                        fontSize: 13.sp,
-                        fontWeight: FontWeight.w600,
-                        color: ColorConst.greenColor,
-                        height: 1.3,
-                      ),
-                    ),
-                  ],
-                ),
+                  ),
+                ],
               ),
-              SizedBox(
-                height: 32.h,
+            ),
+            SizedBox(
+              height: 32.h,
+            ),
+            CustomTransactionHistory(),
+            SizedBox(
+              height: 16.h,
+            ),
+            CustomButton(
+              txt: Strings.buttonSeeAllTransaction,
+              onTap: () {
+                Get.toNamed(Routes.transactionHistory);
+              },
+              boxBorder: Border.all(
+                color: ColorConst.orangeColor,
               ),
-              CustomTransactionHistory(),
-              SizedBox(
-                height: 16.h,
-              ),
-              CustomButton(
-                txt: Strings.buttonSeeAllTransaction,
-                onTap: () {
-                  Get.toNamed(Routes.transactionHistory);
-                },
-                boxBorder: Border.all(
-                  color: ColorConst.orangeColor,
-                ),
-                colorButton: Colors.transparent,
-                colorTxt: ColorConst.orangeColor,
-                height: 48.h,
-              ),
-            ],
-          ),
+              colorButton: Colors.transparent,
+              colorTxt: ColorConst.orangeColor,
+              height: 48.h,
+            ),
+          ],
         ),
       ),
     );

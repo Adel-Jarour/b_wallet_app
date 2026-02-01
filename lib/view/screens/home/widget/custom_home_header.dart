@@ -118,7 +118,7 @@ class CustomHomeHeaderBalance extends StatelessWidget {
             children: [
               CustomText(
                 txt: Strings.homeBalance,
-                fontSize: 16.sp,
+                fontSize: 20.sp,
                 fontWeight: FontWeight.w500,
                 color: ColorConst.whiteColor,
               ),
