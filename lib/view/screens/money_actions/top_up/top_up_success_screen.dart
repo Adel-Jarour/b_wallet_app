@@ -2,6 +2,7 @@ import 'package:b_wallet/config/translation/strings_enum.dart';
 import 'package:b_wallet/const/color_const.dart';
 import 'package:b_wallet/const/lottie_animations.dart';
 import 'package:b_wallet/models/card_model.dart';
+import 'package:b_wallet/routes/app_routes.dart';
 import 'package:b_wallet/view/screens/money_actions/top_up/widget/custom_top_up_success_bottom_sheet.dart';
 import 'package:b_wallet/view/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
@@ -18,34 +19,46 @@ class TopUpSuccessScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     CardModel card = info['card'];
     String num = info['number'];
-    return Scaffold(
-      backgroundColor: ColorConst.orangeColor,
-      bottomSheet: CustomTopUpSuccessBottomSheet(
-        num: num,
-        card: card,
-      ),
-      body: Padding(
-        padding: EdgeInsetsDirectional.only(top: 108.h),
-        child: Center(
-          child: Column(
-            children: [
-              Lottie.asset(
-                LottieAnimations.successCheckWhite,
-                height: 180.h,
-                width: 180.w,
-                repeat: true,
-                backgroundLoading: true,
-              ),
-              SizedBox(
-                height: 20.h,
-              ),
-              CustomText(
-                txt: Strings.topUpSuccessMsg,
-                fontSize: 24.sp,
-                fontWeight: FontWeight.w600,
-                color: ColorConst.whiteColor,
-              ),
-            ],
+    return PopScope(
+      canPop: true,
+      onPopInvokedWithResult: (bool didPop, dynamic result) {
+        if (didPop) {
+          Future.microtask(() {
+            Get.offNamedUntil(
+              Routes.topUp,
+              (route) => route.settings.name == Routes.home,
+            );
+          });
+        }
+      },
+      child: Scaffold(
+        backgroundColor: ColorConst.orangeColor,
+        bottomSheet: CustomTopUpSuccessBottomSheet(
+          num: num,
+          card: card,
+        ),
+        body: Padding(
+          padding: EdgeInsetsDirectional.only(top: 108.h),
+          child: Center(
+            child: Column(
+              children: [
+                Lottie.asset(
+                  LottieAnimations.successCheckWhite,
+                  height: 180.h,
+                  width: 180.w,
+                  repeat: false,
+                ),
+                SizedBox(
+                  height: 20.h,
+                ),
+                CustomText(
+                  txt: Strings.topUpSuccessMsg,
+                  fontSize: 24.sp,
+                  fontWeight: FontWeight.w600,
+                  color: ColorConst.whiteColor,
+                ),
+              ],
+            ),
           ),
         ),
       ),
