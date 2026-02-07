@@ -18,6 +18,8 @@ class Strings {
       'Pleas choose a method to reset password';
   static const String notifyOtpWrong = 'The OTP code is invalid.';
   static const String notifyPinWrong = 'The pin you entered is wrong';
+  static const String notifyTopUpPinWrong =
+      'Top Up failed, please check your balance or credit card';
 
   static const String buttonSignIn = 'Sign In';
   static const String buttonForgetPass = 'Forget Password?';
@@ -165,4 +167,16 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
   static const String topUpMethodCard = 'Top Up Method - ';
   static const String topUpPleaseChooseYourCard = 'Please Choose Your Card';
   static const String topUpChooseTopUpMethod = 'Choose Top Up Method';
+  static const String topUpSuccessMsg = 'Top Up Success';
+  static const String topUpSuccessTotalAmount = 'Total Amount';
+  static const String topUpSuccessYourBalance = 'Your balance';
+
+  static const String securityPinEnterSecurityPin = 'Enter the Security Pin';
+  static const String securityPinMsg =
+      'Security code is used to verify your every transaction to be more secure';
+  static const String securityPinForgetPin = 'Forgot Pin?';
+
+  static const String requestEnterTheRequests = 'Enter the number of requests';
+
+  static const String sendEnterTheSend = 'Enter the number of Send';
 }

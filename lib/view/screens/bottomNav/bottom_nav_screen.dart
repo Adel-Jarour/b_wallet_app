@@ -17,7 +17,7 @@ class BottomNavScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetBuilder<HomeController>(
       builder: (controller) => Scaffold(
-        body: SafeArea(child: controller.screens[controller.bottomNavIndex]),
+        body: controller.screens[controller.bottomNavIndex],
         floatingActionButton: SizedBox(
           width: 70.w,
           height: 70.h,

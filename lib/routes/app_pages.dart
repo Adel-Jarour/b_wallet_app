@@ -8,9 +8,11 @@ import 'package:b_wallet/view/screens/auth/sign_up/pin/pin_screen.dart';
 import 'package:b_wallet/view/screens/bottomNav/bottom_nav_screen.dart';
 import 'package:b_wallet/view/screens/cash_flow/transaction_history/transaction_history_screen.dart';
 import 'package:b_wallet/view/screens/home/notify/notification_screen.dart';
-import 'package:b_wallet/view/screens/money_actions/request_screen.dart';
-import 'package:b_wallet/view/screens/money_actions/send_screen.dart';
+import 'package:b_wallet/view/screens/money_actions/pin/security_pin.dart';
+import 'package:b_wallet/view/screens/money_actions/request/request_screen.dart';
+import 'package:b_wallet/view/screens/money_actions/send/send_screen.dart';
 import 'package:b_wallet/view/screens/money_actions/top_up/top_up_screen.dart';
+import 'package:b_wallet/view/screens/money_actions/top_up/top_up_success_screen.dart';
 import 'package:b_wallet/view/screens/profile/add_new_card/add_new_card_screen.dart';
 import 'package:b_wallet/view/screens/profile/card/saved_card_screen.dart';
 import 'package:b_wallet/view/screens/profile/contact/contact_screen.dart';
@@ -39,7 +41,7 @@ class AppPages {
     ),
     GetPage(
       name: Routes.otp,
-      page: () => OtpScreen(),
+      page: () => const OtpScreen(),
       transition: Transition.leftToRightWithFade,
     ),
     GetPage(
@@ -54,7 +56,7 @@ class AppPages {
     ),
     GetPage(
       name: Routes.resetPass,
-      page: () => ResetPassScreen(),
+      page: () => const ResetPassScreen(),
       transition: Transition.leftToRightWithFade,
     ),
     GetPage(
@@ -74,7 +76,7 @@ class AppPages {
     ),
     GetPage(
       name: Routes.profileSetting,
-      page: () => ProfileSettingScreen(),
+      page: () => const ProfileSettingScreen(),
       transition: Transition.leftToRightWithFade,
     ),
     GetPage(
@@ -89,17 +91,17 @@ class AppPages {
     ),
     GetPage(
       name: Routes.termsAndCondition,
-      page: () => TermsAndConditionScreen(),
+      page: () => const TermsAndConditionScreen(),
       transition: Transition.leftToRightWithFade,
     ),
     GetPage(
       name: Routes.privacyPolicy,
-      page: () => PrivacyPolicyScreen(),
+      page: () => const PrivacyPolicyScreen(),
       transition: Transition.leftToRightWithFade,
     ),
     GetPage(
       name: Routes.contact,
-      page: () => ContactScreen(),
+      page: () => const ContactScreen(),
       transition: Transition.leftToRightWithFade,
     ),
     GetPage(
@@ -125,6 +127,16 @@ class AppPages {
     GetPage(
       name: Routes.request,
       page: () => RequestScreen(),
+      transition: Transition.leftToRightWithFade,
+    ),
+    GetPage(
+      name: Routes.securityPin,
+      page: () => SecurityPinScreen(),
+      transition: Transition.leftToRightWithFade,
+    ),
+    GetPage(
+      name: Routes.topUpSuccess,
+      page: () => TopUpSuccessScreen(),
       transition: Transition.leftToRightWithFade,
     ),
   ];

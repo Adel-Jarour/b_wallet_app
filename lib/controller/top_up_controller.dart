@@ -7,12 +7,16 @@ import 'package:get/get.dart';
 
 class TopUpController extends GetxController {
   var number = "0";
+  bool correctTopUp = false;
 
   void addDigit(String digit) {
     if (number == "0") {
       number = "";
     }
     number += digit;
+    if (selectedMethod != null && number != "0") {
+      correctTopUp = true;
+    }
     update();
   }
 
@@ -20,6 +24,7 @@ class TopUpController extends GetxController {
     if (number == "0") return;
     number = number.substring(0, number.length - 1);
     if (number.isEmpty) {
+      correctTopUp = false;
       number = "0";
     }
     update();
@@ -50,6 +55,9 @@ class TopUpController extends GetxController {
 
   void onChangeSelectedMethod(int? value) {
     selectedMethod = value;
+    if (number != "0") {
+      correctTopUp = true;
+    }
     Get.back();
     update();
   }
@@ -58,7 +66,21 @@ class TopUpController extends GetxController {
     icon: ImageConst.topUpIcon,
     title: Strings.buttonAddNewCard,
     onTap: () {
+      Get.back();
       Get.toNamed(Routes.addNewCard);
     },
   );
+
+  void submitTopUp() {
+    if (correctTopUp) {
+      Get.toNamed(Routes.securityPin, arguments: {
+        'app_bar_title': Strings.homeTopUp,
+        'route_name': Routes.topUpSuccess,
+        'info': {
+          'number': number,
+          'card': cards[selectedMethod!],
+        },
+      });
+    }
+  }
 }

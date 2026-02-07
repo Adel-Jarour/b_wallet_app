@@ -1,28 +1,27 @@
 import 'package:b_wallet/config/translation/strings_enum.dart';
 import 'package:b_wallet/const/color_const.dart';
-import 'package:b_wallet/controller/top_up_controller.dart';
-import 'package:b_wallet/view/screens/money_actions/top_up/widget/custom_method_card.dart';
+import 'package:b_wallet/controller/send_controller.dart';
+import 'package:b_wallet/view/widgets/custom_arrow_back.dart';
 import 'package:b_wallet/view/widgets/custom_button.dart';
 import 'package:b_wallet/view/widgets/custom_keyboard.dart';
-import 'package:b_wallet/view/widgets/custom_arrow_back.dart';
 import 'package:b_wallet/view/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-class TopUpScreen extends StatelessWidget {
-  TopUpScreen({super.key});
+class SendScreen extends StatelessWidget {
+  SendScreen({super.key});
 
-  final TopUpController controller = Get.put(TopUpController());
+  final SendController controller = Get.put(SendController());
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: ColorConst.orangeColor,
+        backgroundColor: ColorConst.purpleColor,
         leading: const CustomArrowBack(),
         title: CustomText(
-          txt: Strings.homeTopUp,
+          txt: Strings.homeSend,
           fontSize: 16.sp,
           fontWeight: FontWeight.w500,
           color: ColorConst.whiteColor,
@@ -34,25 +33,70 @@ class TopUpScreen extends StatelessWidget {
           Container(
             width: double.infinity,
             padding: EdgeInsetsDirectional.only(top: 25.h, bottom: 30.h),
-            color: ColorConst.orangeColor,
+            color: ColorConst.purpleColor,
             alignment: Alignment.center,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 CustomText(
-                  txt: Strings.topUpEnterTheNum,
+                  txt: Strings.sendEnterTheSend,
                   fontSize: 14.sp,
                   color: ColorConst.whiteColor.withValues(alpha: 0.7),
                 ),
                 SizedBox(
                   height: 12.h,
                 ),
-                GetBuilder<TopUpController>(
+                GetBuilder<SendController>(
                   builder: (context) => CustomText(
                     txt: '\$${controller.number}.00',
                     fontSize: 32.sp,
                     fontWeight: FontWeight.bold,
                     color: ColorConst.whiteColor,
+                  ),
+                ),
+                SizedBox(
+                  height: 50.h,
+                ),
+                SizedBox(
+                  height: 40.h,
+                  child: ListView.separated(
+                    padding: EdgeInsetsDirectional.only(
+                      start: 24.w,
+                      end: 24.w,
+                    ),
+                    scrollDirection: Axis.horizontal,
+                    itemBuilder: (context, index) {
+                      return InkWell(
+                        onTap: () {
+                          controller.selectFromSuggested(
+                              controller.suggestedNumbers[index]);
+                        },
+                        child: Container(
+                          height: 40.h,
+                          padding: EdgeInsetsDirectional.symmetric(
+                            horizontal: 12.w,
+                            vertical: 8.h,
+                          ),
+                          decoration: BoxDecoration(
+                            color: ColorConst.whiteColor.withValues(alpha: 0.1),
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+                          alignment: Alignment.center,
+                          child: CustomText(
+                            txt: "\$ ${controller.suggestedNumbers[index]}.00",
+                            color: ColorConst.whiteColor,
+                            fontSize: 14.sp,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      );
+                    },
+                    separatorBuilder: (context, index) {
+                      return SizedBox(
+                        width: 12.w,
+                      );
+                    },
+                    itemCount: 5,
                   ),
                 ),
               ],
@@ -82,20 +126,16 @@ class TopUpScreen extends StatelessWidget {
                   SizedBox(
                     height: 32.h,
                   ),
-                  CustomMethodCard(),
-                  SizedBox(
-                    height: 16.h,
-                  ),
-                  GetBuilder<TopUpController>(
+                  GetBuilder<SendController>(
                     builder: (_) => CustomButton(
-                      txt: Strings.buttonTopUp,
-                      colorButton: controller.correctTopUp
+                      txt: Strings.buttonContinue,
+                      colorButton: controller.correctSend
                           ? ColorConst.orangeColor
                           : ColorConst.grey4Color,
-                      colorTxt: controller.correctTopUp
+                      colorTxt: controller.correctSend
                           ? ColorConst.whiteColor
                           : ColorConst.grey2Color,
-                      onTap: controller.submitTopUp,
+                      onTap: controller.submitSend,
                     ),
                   ),
                 ],

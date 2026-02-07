@@ -19,4 +19,6 @@ class Routes {
   static const contact = "/contact";
   static const transactionHistory = "/transaction_history";
   static const help = "/help";
+  static const securityPin = "/security_pin";
+  static const topUpSuccess = "/top_up_success";
 }

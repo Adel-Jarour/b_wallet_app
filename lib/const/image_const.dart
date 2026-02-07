@@ -43,4 +43,5 @@ class ImageConst {
   static String whatsAppIcon = "assets/icons/whatsApp.svg";
   static String foodIcon = "assets/icons/food.svg";
   static String filterIcon = "assets/icons/filter.svg";
+  static String amountIcon = "assets/icons/amount.svg";
 }

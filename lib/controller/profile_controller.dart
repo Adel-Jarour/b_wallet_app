@@ -7,7 +7,7 @@ import 'package:get/get.dart';
 class ProfileController extends GetxController {
   final List<ProfileSettingModel> accountItems = [
     ProfileSettingModel(
-      icon: ImageConst.balanceIcon,
+      icon: ImageConst.amountIcon,
       title: Strings.profileBalance,
       value: "\$56,000.00",
       onTap: () {},
