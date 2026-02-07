@@ -11,13 +11,16 @@ import 'package:get/get.dart';
 class BottomNavScreen extends StatelessWidget {
   BottomNavScreen({super.key});
 
-  final controller = Get.lazyPut(() => HomeController());
+  final HomeController controller = Get.find();
 
   @override
   Widget build(BuildContext context) {
     return GetBuilder<HomeController>(
       builder: (controller) => Scaffold(
-        body: controller.screens[controller.bottomNavIndex],
+        body: IndexedStack(
+          index: controller.bottomNavIndex,
+          children: controller.screens,
+        ),
         floatingActionButton: SizedBox(
           width: 70.w,
           height: 70.h,

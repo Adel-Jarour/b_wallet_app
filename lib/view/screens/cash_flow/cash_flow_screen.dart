@@ -15,7 +15,7 @@ import 'package:get/get.dart';
 class CashFlowScreen extends StatelessWidget {
   CashFlowScreen({super.key});
 
-  final CashFlowController controller = Get.put(CashFlowController());
+  final CashFlowController controller = Get.find();
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +38,7 @@ class CashFlowScreen extends StatelessWidget {
             SizedBox(
               height: 20.h,
             ),
-            CustomCashChart(),
+            const CustomCashChart(),
             SizedBox(
               height: 20.h,
             ),

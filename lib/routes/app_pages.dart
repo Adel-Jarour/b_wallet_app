@@ -1,4 +1,5 @@
 import 'package:b_wallet/routes/app_routes.dart';
+import 'package:b_wallet/utils/binding/home_binging.dart';
 import 'package:b_wallet/view/screens/auth/forget_pass/email/email_screen.dart';
 import 'package:b_wallet/view/screens/auth/forget_pass/forget_pass_method/forget_pass_method_screen.dart';
 import 'package:b_wallet/view/screens/auth/forget_pass/otp/otp_screen.dart';
@@ -52,6 +53,7 @@ class AppPages {
     GetPage(
       name: Routes.home,
       page: () => BottomNavScreen(),
+      binding: HomeBinding(),
       transition: Transition.leftToRightWithFade,
     ),
     GetPage(
