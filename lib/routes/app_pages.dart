@@ -11,7 +11,9 @@ import 'package:b_wallet/view/screens/cash_flow/transaction_history/transaction_
 import 'package:b_wallet/view/screens/home/notify/notification_screen.dart';
 import 'package:b_wallet/view/screens/money_actions/pin/security_pin.dart';
 import 'package:b_wallet/view/screens/money_actions/request/request_screen.dart';
+import 'package:b_wallet/view/screens/money_actions/request/request_success_screen.dart';
 import 'package:b_wallet/view/screens/money_actions/send/send_screen.dart';
+import 'package:b_wallet/view/screens/money_actions/send/send_success_screen.dart';
 import 'package:b_wallet/view/screens/money_actions/top_up/top_up_screen.dart';
 import 'package:b_wallet/view/screens/money_actions/top_up/top_up_success_screen.dart';
 import 'package:b_wallet/view/screens/profile/add_new_card/add_new_card_screen.dart';
@@ -139,6 +141,16 @@ class AppPages {
     GetPage(
       name: Routes.topUpSuccess,
       page: () => TopUpSuccessScreen(),
+      transition: Transition.leftToRightWithFade,
+    ),
+    GetPage(
+      name: Routes.requestSuccess,
+      page: () => const RequestSuccessScreen(),
+      transition: Transition.leftToRightWithFade,
+    ),
+    GetPage(
+      name: Routes.sendSuccess,
+      page: () => const SendSuccessScreen(),
       transition: Transition.leftToRightWithFade,
     ),
   ];

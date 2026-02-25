@@ -1,6 +1,8 @@
 import 'package:b_wallet/config/translation/strings_enum.dart';
 import 'package:b_wallet/const/color_const.dart';
 import 'package:b_wallet/controller/request_controller.dart';
+import 'package:b_wallet/view/screens/money_actions/request/widget/custom_request_bottom_sheet.dart';
+import 'package:b_wallet/view/screens/money_actions/request/widget/custom_request_header_widget.dart';
 import 'package:b_wallet/view/widgets/custom_arrow_back.dart';
 import 'package:b_wallet/view/widgets/custom_button.dart';
 import 'package:b_wallet/view/widgets/custom_keyboard.dart';
@@ -30,78 +32,7 @@ class RequestScreen extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Container(
-            width: double.infinity,
-            padding: EdgeInsetsDirectional.only(top: 25.h, bottom: 30.h),
-            color: ColorConst.softRedColor,
-            alignment: Alignment.center,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                CustomText(
-                  txt: Strings.requestEnterTheRequests,
-                  fontSize: 14.sp,
-                  color: ColorConst.whiteColor.withValues(alpha: 0.7),
-                ),
-                SizedBox(
-                  height: 12.h,
-                ),
-                GetBuilder<RequestController>(
-                  builder: (context) => CustomText(
-                    txt: '\$${controller.number}.00',
-                    fontSize: 32.sp,
-                    fontWeight: FontWeight.bold,
-                    color: ColorConst.whiteColor,
-                  ),
-                ),
-                SizedBox(
-                  height: 50.h,
-                ),
-                SizedBox(
-                  height: 40.h,
-                  child: ListView.separated(
-                    padding: EdgeInsetsDirectional.only(
-                      start: 24.w,
-                      end: 24.w,
-                    ),
-                    scrollDirection: Axis.horizontal,
-                    itemBuilder: (context, index) {
-                      return InkWell(
-                        onTap: () {
-                          controller.selectFromSuggested(
-                              controller.suggestedNumbers[index]);
-                        },
-                        child: Container(
-                          height: 40.h,
-                          padding: EdgeInsetsDirectional.symmetric(
-                            horizontal: 12.w,
-                            vertical: 8.h,
-                          ),
-                          decoration: BoxDecoration(
-                            color: ColorConst.whiteColor.withValues(alpha: 0.1),
-                            borderRadius: BorderRadius.circular(15),
-                          ),
-                          alignment: Alignment.center,
-                          child: CustomText(
-                            txt: "\$ ${controller.suggestedNumbers[index]}.00",
-                            color: ColorConst.whiteColor,
-                            fontSize: 14.sp,
-                            fontWeight: FontWeight.w600,
-                          ),
-                        ),
-                      );
-                    },
-                    separatorBuilder: (context, index) {
-                      return SizedBox(
-                        width: 12.w,
-                      );
-                    },
-                    itemCount: 5,
-                  ),
-                ),
-              ],
-            ),
-          ),
+          CustomRequestHeaderWidget(),
           SizedBox(
             height: 27.h,
           ),
@@ -135,7 +66,23 @@ class RequestScreen extends StatelessWidget {
                       colorTxt: controller.correctRequest
                           ? ColorConst.whiteColor
                           : ColorConst.grey2Color,
-                      onTap: controller.submitSend,
+                      onTap: () {
+                        if (controller.correctRequest) {
+                          showModalBottomSheet(
+                            context: context,
+                            isScrollControlled: true,
+                            backgroundColor: ColorConst.whiteColor,
+                            constraints: BoxConstraints(
+                              maxHeight:
+                                  MediaQuery.of(context).size.height * 0.9,
+                              minHeight:
+                                  MediaQuery.of(context).size.height * 0.9,
+                            ),
+                            elevation: 0,
+                            builder: (_) => CustomRequestBottomSheet(),
+                          );
+                        }
+                      },
                     ),
                   ),
                 ],

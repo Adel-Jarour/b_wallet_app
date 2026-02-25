@@ -12,6 +12,7 @@ class Strings {
   static const String textFieldChoose = 'Choose';
   static const String textFieldYear = 'YY';
   static const String textFieldMonth = 'MM';
+  static const String textFieldTypeSearchContact = 'Type to search contact';
 
   static const String notifyWrong = 'Wrong';
   static const String notifyChooseForgetMethod =
@@ -37,6 +38,7 @@ class Strings {
   static const String buttonNO = 'NO';
   static const String buttonSeeAllTransaction = 'See All Transaction';
   static const String buttonTopUp = 'Top Up';
+  static const String buttonRequest = 'Request';
 
   static const String errorPleaseSelectCardType = 'Please select a card type';
   static const String errorPleaseEnterCardNum = 'Please enter card number';
@@ -177,6 +179,17 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
   static const String securityPinForgetPin = 'Forgot Pin?';
 
   static const String requestEnterTheRequests = 'Enter the number of requests';
+  static const String requestNumTheRequests = 'Number of requests';
+  static const String requestSelectCategory = 'Select Category';
+  static const String requestRequestTo = 'Request to';
+  static const String requestContactNotFound =
+      'Contact not found, please try other keywords or name';
+  static const String requestCategory = 'Category';
+  static const String requestFoodDrink = 'Food & Drink';
+  static const String requestExpense = 'Expense';
+  static const String requestProperty = 'Property';
+  static const String requestHobby = 'Category';
+  static const String requestEntertainment = 'Entertainment';
 
   static const String sendEnterTheSend = 'Enter the number of Send';
 }

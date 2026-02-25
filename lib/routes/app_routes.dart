@@ -21,4 +21,6 @@ class Routes {
   static const help = "/help";
   static const securityPin = "/security_pin";
   static const topUpSuccess = "/top_up_success";
+  static const requestSuccess = "/request_success";
+  static const sendSuccess = "/send_success";
 }

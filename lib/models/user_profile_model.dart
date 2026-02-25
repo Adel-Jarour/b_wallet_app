@@ -1,17 +1,19 @@
 class UserProfileModel {
-  final String id;
-  final String name;
-  final String email;
+  final int id;
+  final String firstName;
+  final String lastName;
   final String phoneNumber;
-  final DateTime birthday;
+  final String? email;
+  final DateTime? birthday;
   final String? profileImageUrl;
 
   UserProfileModel({
     required this.id,
-    required this.name,
-    required this.email,
+    required this.firstName,
+    required this.lastName,
+    this.email,
     required this.phoneNumber,
-    required this.birthday,
+    this.birthday,
     this.profileImageUrl,
   });
 }

@@ -36,6 +36,7 @@ class CustomTextFormField extends StatelessWidget {
   final double? prefixScale;
   final double? hintFontSize;
   final TextDirection? textDirection;
+  final BoxConstraints? suffixIconConstraints;
   final bool readOnly;
   final List<TextInputFormatter>? inputFormat;
 
@@ -74,6 +75,7 @@ class CustomTextFormField extends StatelessWidget {
     this.onChanged,
     this.errorTxt,
     this.inputFormat,
+    this.suffixIconConstraints,
   });
 
   @override
@@ -92,7 +94,8 @@ class CustomTextFormField extends StatelessWidget {
       onFieldSubmitted: (value) {
         FocusManager.instance.primaryFocus?.unfocus();
       },
-      onChanged: (onChanged != null) ? (String value) => onChanged : null,
+      onChanged:
+          (onChanged != null) ? (String value) => onChanged!(value) : null,
       minLines: minLines,
       maxLines: maxLines,
       readOnly: readOnly,
@@ -170,7 +173,8 @@ class CustomTextFormField extends StatelessWidget {
                 child: suffixIcon,
               )
             : null,
-        suffixIconConstraints: BoxConstraints(maxWidth: 40.w),
+        suffixIconConstraints:
+            suffixIconConstraints ?? BoxConstraints(maxWidth: 40.w),
         suffixIconColor: suffixIconColor ?? Colors.white,
         prefixIconColor: prefixIconColor ?? Colors.white,
         counterText: '',
