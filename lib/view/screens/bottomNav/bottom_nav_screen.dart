@@ -21,6 +21,7 @@ class BottomNavScreen extends StatelessWidget {
           index: controller.bottomNavIndex,
           children: controller.screens,
         ),
+        resizeToAvoidBottomInset: false,
         floatingActionButton: SizedBox(
           width: 70.w,
           height: 70.h,

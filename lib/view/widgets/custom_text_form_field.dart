@@ -169,7 +169,7 @@ class CustomTextFormField extends StatelessWidget {
         ),
         suffixIcon: (suffixIcon != null)
             ? Padding(
-                padding: EdgeInsetsDirectional.only(end: 22.w),
+                padding: EdgeInsetsDirectional.only(end: 16.w),
                 child: suffixIcon,
               )
             : null,
