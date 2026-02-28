@@ -159,6 +159,18 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
   static const String transactionHistoryToday = 'Today';
   static const String transactionHistoryYesterday = 'Yesterday';
 
+  static const String transactionDetailMoneyReceived = 'Money Received';
+  static const String transactionDetailTransactionId = 'Transaction ID';
+  static const String transactionDetailTotalAmount = 'Total Amount';
+  static const String transactionDetailSuccessfullySentTo =
+      'Successfully sent to';
+  static const String transactionDetailReceivedFrom = 'Received from';
+  static const String transactionDetailThankYou = 'Thank You';
+  static const String transactionDetailShare = 'Share';
+  static const String transactionDetailSendAgain = 'Send Again';
+  static const String transactionDetailHaveIssue = 'Have any issue?';
+  static const String transactionDetailContactUs = 'Contact Us';
+
   static const String helpItemWhatBWalletApp = 'What is B-Wallet App?';
   static const String helpItemGeneralInformation = 'General Information';
   static const String helpItemClaimPromo = 'Claim Promo';
