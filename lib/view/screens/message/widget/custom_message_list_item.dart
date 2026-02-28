@@ -1,4 +1,5 @@
 import 'package:b_wallet/const/color_const.dart';
+import 'package:b_wallet/controller/conversation_controller.dart';
 import 'package:b_wallet/models/message_model.dart';
 import 'package:b_wallet/view/screens/message/conversation_screen.dart';
 import 'package:b_wallet/view/widgets/custom_text.dart';
