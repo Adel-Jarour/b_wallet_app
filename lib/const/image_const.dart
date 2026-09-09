@@ -46,4 +46,7 @@ class ImageConst {
   static String amountIcon = "assets/icons/amount.svg";
   static String searchIcon = "assets/icons/search.svg";
   static String warningIcon = "assets/icons/warning.svg";
+  static String calenderIcon = "assets/icons/calender.svg";
+  static String noteIcon = "assets/icons/note.svg";
+  static String personIcon = "assets/icons/person.svg";
 }

@@ -20,7 +20,7 @@ class HomeController extends GetxController {
   }
 
   List<Widget> screens = [
-    HomeScreen(),
+    const HomeScreen(),
     CashFlowScreen(),
     const MessageScreen(),
     ProfileScreen(),

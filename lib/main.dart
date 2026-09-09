@@ -17,11 +17,9 @@ class App extends StatelessWidget {
       designSize: const Size(375, 812),
       minTextAdapt: true,
       splitScreenMode: true,
-      useInheritedMediaQuery: true,
       rebuildFactor: (old, data) => true,
       builder: (context, widget) {
         return GetMaterialApp(
-          useInheritedMediaQuery: true,
           debugShowCheckedModeBanner: false,
           theme: ThemeData(
             scaffoldBackgroundColor: ColorConst.whiteColor,
